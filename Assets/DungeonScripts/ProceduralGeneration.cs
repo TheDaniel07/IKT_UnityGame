@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewMonoBehaviourScript : MonoBehaviour
+public class ProceduralGeneration : MonoBehaviour
 {
     public static HashSet<Vector2Int> SimpleRandomWalk(Vector2Int startPosition, int walkLenght)
     {
@@ -16,6 +16,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
             path.Add(newPosition);
             prevPosition = newPosition;
         }
+        return path;
     }
 }
 
@@ -31,6 +32,6 @@ public static class Direction2D
 
     public static Vector2Int randomDirection()
     {
-        return directionList[Random.Range(0, directionList.Count)]
+        return directionList[Random.Range(0, directionList.Count)];
     }
 }
