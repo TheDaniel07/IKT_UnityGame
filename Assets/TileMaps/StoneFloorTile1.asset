@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b08ceb78e3b2495b8d808a5860e66794, type: 3}
   m_Name: StoneFloorTile1
   m_EditorClassIdentifier: Unity.2D.Tilemap.Extras::UnityEngine.Tilemaps.AutoTile
-  m_DefaultSprite: {fileID: -4450180630560716613, guid: a0646bca9a5e7dc41a68983ba0a0c29c, type: 3}
+  m_DefaultSprite: {fileID: 4247149079353844499, guid: 70f8d4253cca7c84fbfe3d747afb9e53, type: 3}
   m_DefaultGameObject: {fileID: 0}
   m_DefaultColliderType: 1
   m_MaskType: 0
