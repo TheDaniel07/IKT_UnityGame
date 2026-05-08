@@ -12,6 +12,7 @@ public class Slot : MonoBehaviour
     {
         slotImage = GetComponent<Image>();
         emptySprite = slotImage.sprite;
+        slotImage.color = new Color(1, 1, 1, 0);
     }
 
     public void SetItem(Item newItem)
@@ -32,7 +33,7 @@ public class Slot : MonoBehaviour
     {
         item = null;
         slotImage.sprite = emptySprite;
-        slotImage.color = Color.white;
+        slotImage.color = new Color(1, 1, 1, 0);
     }
 
     public bool IsEmpty()

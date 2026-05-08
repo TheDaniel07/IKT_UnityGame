@@ -5,19 +5,20 @@ using System.Collections.Generic;
 [System.Serializable]
 public class CraftingRecipe
 {
-    public string recipeName;
-    public int[] ingredientIDs;
-    public Item resultItem;
+    public int slot0;
+    public int slot1;
+    public int slot2;
+    public int slot3;
+    public Item result;
 }
 
 public class CraftingManager : MonoBehaviour
 {
     private Item currentItem;
-    //public Image customCursor;
     public Slot[] craftingSlots;
+    public List<Item> itemList;
+    public List<CraftingRecipe> recipes;
     public Slot resultSlot;
-    public float snapDistance = 100f;
-    public List<CraftingRecipe> recipes = new List<CraftingRecipe>();
 
     private void Update()
     {
@@ -25,7 +26,24 @@ public class CraftingManager : MonoBehaviour
         {
             if (currentItem != null)
             {
-                TryPlaceItem();
+                Slot nearestSlot = null;
+                float closestDistance = float.MaxValue;
+
+                foreach (Slot slot in craftingSlots)
+                {
+                    float distance = Vector2.Distance(Input.mousePosition, slot.transform.position);
+                    if (distance < closestDistance)
+                    {
+                        closestDistance = distance;
+                        nearestSlot = slot;
+                    }
+                }
+
+                nearestSlot.SetItem(currentItem);
+                itemList[nearestSlot.slotIndex] = currentItem;
+                currentItem = null;
+
+                CheckForCompletedRecipes();
             }
         }
     }
@@ -35,97 +53,32 @@ public class CraftingManager : MonoBehaviour
         if (currentItem == null)
         {
             currentItem = item;
-            currentItem.SetVisible(false);
-            //customCursor.gameObject.SetActive(true);
-            //customCursor.sprite = currentItem.GetComponent<Image>().sprite;
         }
     }
 
-    private void TryPlaceItem()
+    public void OnClickSlot(Slot slot)
     {
-        Slot nearestSlot = null;
-        float shortestDistance = float.MaxValue;
-
-        foreach (Slot slot in craftingSlots)
-        {
-            float dist = Vector2.Distance(Input.mousePosition, slot.transform.position);
-            if (dist < shortestDistance)
-            {
-                shortestDistance = dist;
-                nearestSlot = slot;
-            }
-        }
-
-        if (nearestSlot != null && shortestDistance <= snapDistance)
-        {
-            if (!nearestSlot.IsEmpty())
-            {
-                nearestSlot.item.SetVisible(true);
-            }
-            nearestSlot.SetItem(currentItem);
-            DropItem();
-            CheckCraftingResult();
-        }
-        else
-        {
-            currentItem.SetVisible(true);
-            DropItem();
-        }
+        slot.ClearSlot();
+        itemList[slot.slotIndex] = null;
+        CheckForCompletedRecipes();
     }
 
-    private void DropItem()
+    private void CheckForCompletedRecipes()
     {
-        currentItem = null;
-        //customCursor.gameObject.SetActive(false);
-    }
+        resultSlot.ClearSlot();
 
-    private void CheckCraftingResult()
-    {
-        if (resultSlot == null) return;
-
-        int[] currentIDs = new int[craftingSlots.Length];
-
-        for (int i = 0; i < craftingSlots.Length; i++)
-        {
-            if (craftingSlots[i].IsEmpty())
-            {
-                resultSlot.ClearSlot();
-                return;
-            }
-            currentIDs[i] = craftingSlots[i].item.itemID;
-        }
+        int id0 = itemList[0] != null ? itemList[0].itemID : -1;
+        int id1 = itemList[1] != null ? itemList[1].itemID : -1;
+        int id2 = itemList[2] != null ? itemList[2].itemID : -1;
+        int id3 = itemList[3] != null ? itemList[3].itemID : -1;
 
         foreach (CraftingRecipe recipe in recipes)
         {
-            if (recipe.ingredientIDs.Length != craftingSlots.Length)
-                continue;
-
-            int[] sortedRecipe = new int[recipe.ingredientIDs.Length];
-            int[] sortedCurrent = new int[currentIDs.Length];
-
-            System.Array.Copy(recipe.ingredientIDs, sortedRecipe, sortedRecipe.Length);
-            System.Array.Copy(currentIDs, sortedCurrent, sortedCurrent.Length);
-
-            System.Array.Sort(sortedRecipe);
-            System.Array.Sort(sortedCurrent);
-
-            bool matched = true;
-            for (int i = 0; i < sortedRecipe.Length; i++)
+            if (recipe.slot0 == id0 && recipe.slot1 == id1 && recipe.slot2 == id2 && recipe.slot3 == id3)
             {
-                if (sortedRecipe[i] != sortedCurrent[i])
-                {
-                    matched = false;
-                    break;
-                }
-            }
-
-            if (matched)
-            {
-                resultSlot.SetItem(recipe.resultItem);
+                resultSlot.SetItem(recipe.result);
                 return;
             }
         }
-
-        resultSlot.ClearSlot();
     }
 }
