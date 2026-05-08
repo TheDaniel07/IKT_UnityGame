@@ -21,6 +21,7 @@ public class DungeonMapGenerator : MonoBehaviour
     public void ProcedurallyGenerate()
     {
         HashSet<Vector2Int> floorPositions = StartRandomWalk();
+        tilemapVisualizer.Clear();
         tilemapVisualizer.PaintFloorTiles(floorPositions);
     }
 
