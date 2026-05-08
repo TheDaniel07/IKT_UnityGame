@@ -5,18 +5,15 @@ public class Slot : MonoBehaviour
 {
     public Item item;
     public int slotIndex;
-
     private Image slotImage;
-    private Sprite emptySprite; // null = no sprite
+    private Sprite emptySprite;
 
     private void Awake()
     {
         slotImage = GetComponent<Image>();
-        // Save the default empty appearance
         emptySprite = slotImage.sprite;
     }
 
-    // Place an item into this slot and update its visual
     public void SetItem(Item newItem)
     {
         item = newItem;
@@ -31,15 +28,11 @@ public class Slot : MonoBehaviour
         }
     }
 
-    // Clear the slot back to its empty state
     public void ClearSlot()
     {
         item = null;
         slotImage.sprite = emptySprite;
-        // Keep the slot GameObject active — just make it semi-transparent to show it's empty
-        Color c = slotImage.color;
-        c.a = 0.3f;
-        slotImage.color = c;
+        slotImage.color = Color.white;
     }
 
     public bool IsEmpty()

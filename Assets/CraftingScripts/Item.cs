@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class Item : MonoBehaviour
 {
     public string itemName;
-
+    public int itemID;
     private Image itemImage;
 
     private void Awake()
@@ -12,7 +12,6 @@ public class Item : MonoBehaviour
         itemImage = GetComponent<Image>();
     }
 
-    // Hide the item visually while it's being dragged
     public void SetVisible(bool visible)
     {
         if (itemImage == null)

@@ -1,26 +1,26 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections.Generic;
+
+[System.Serializable]
+public class CraftingRecipe
+{
+    public string recipeName;
+    public int[] ingredientIDs;
+    public Item resultItem;
+}
 
 public class CraftingManager : MonoBehaviour
 {
-    // The item currently being dragged
     private Item currentItem;
-
-    // The image that follows the mouse as a drag cursor
-    public Image customCursor;
-
-    // The 4 ingredient crafting slots (assign in Inspector)
+    //public Image customCursor;
     public Slot[] craftingSlots;
-
-    // The result slot (assign in Inspector)
     public Slot resultSlot;
-
-    // How close (in pixels) the mouse must be to snap into a slot
     public float snapDistance = 100f;
+    public List<CraftingRecipe> recipes = new List<CraftingRecipe>();
 
     private void Update()
     {
-        // On left mouse button RELEASE (not hold), attempt to place the item
         if (Input.GetMouseButtonUp(0))
         {
             if (currentItem != null)
@@ -30,19 +30,14 @@ public class CraftingManager : MonoBehaviour
         }
     }
 
-    // Called by the EventTrigger (PointerDown) on each item
     public void OnMouseDownItem(Item item)
     {
         if (currentItem == null)
         {
             currentItem = item;
-
-            // Hide the item at its original position while dragging
             currentItem.SetVisible(false);
-
-            // Show and update the drag cursor
-            customCursor.gameObject.SetActive(true);
-            customCursor.sprite = currentItem.GetComponent<Image>().sprite;
+            //customCursor.gameObject.SetActive(true);
+            //customCursor.sprite = currentItem.GetComponent<Image>().sprite;
         }
     }
 
@@ -61,22 +56,18 @@ public class CraftingManager : MonoBehaviour
             }
         }
 
-        // Only place if close enough to a slot
         if (nearestSlot != null && shortestDistance <= snapDistance)
         {
-            // If the slot already has an item, restore that item's visibility
             if (!nearestSlot.IsEmpty())
             {
                 nearestSlot.item.SetVisible(true);
             }
-
             nearestSlot.SetItem(currentItem);
             DropItem();
             CheckCraftingResult();
         }
         else
         {
-            // Not close enough — return item to its original position
             currentItem.SetVisible(true);
             DropItem();
         }
@@ -85,46 +76,56 @@ public class CraftingManager : MonoBehaviour
     private void DropItem()
     {
         currentItem = null;
-        customCursor.gameObject.SetActive(false);
+        //customCursor.gameObject.SetActive(false);
     }
 
-    // ---------------------------------------------------------------
-    // CRAFTING RECIPES
-    // Define your recipes here. craftingSlots[0..3] are the 4 slots.
-    // resultSlot will display the crafted item's sprite.
-    // ---------------------------------------------------------------
     private void CheckCraftingResult()
     {
         if (resultSlot == null) return;
 
-        // Example recipe: all 4 slots filled with Wood => Planks
-        // Replace or extend this with your actual recipes.
-        bool allFilled = true;
-        bool allWood = true;
+        int[] currentIDs = new int[craftingSlots.Length];
 
-        foreach (Slot slot in craftingSlots)
+        for (int i = 0; i < craftingSlots.Length; i++)
         {
-            if (slot.IsEmpty())
+            if (craftingSlots[i].IsEmpty())
             {
-                allFilled = false;
-                break;
+                resultSlot.ClearSlot();
+                return;
             }
-            if (slot.item.itemName != "Wood")
-            {
-                allWood = false;
-            }
+            currentIDs[i] = craftingSlots[i].item.itemID;
         }
 
-        if (allFilled && allWood)
+        foreach (CraftingRecipe recipe in recipes)
         {
-            // Show result — assign your result item in the resultSlot manually
-            // or swap the sprite like below if you have a result Item reference.
-            Debug.Log("Recipe matched: 4x Wood => Planks!");
-            // resultSlot.SetItem(yourResultItem); // wire this up as needed
+            if (recipe.ingredientIDs.Length != craftingSlots.Length)
+                continue;
+
+            int[] sortedRecipe = new int[recipe.ingredientIDs.Length];
+            int[] sortedCurrent = new int[currentIDs.Length];
+
+            System.Array.Copy(recipe.ingredientIDs, sortedRecipe, sortedRecipe.Length);
+            System.Array.Copy(currentIDs, sortedCurrent, sortedCurrent.Length);
+
+            System.Array.Sort(sortedRecipe);
+            System.Array.Sort(sortedCurrent);
+
+            bool matched = true;
+            for (int i = 0; i < sortedRecipe.Length; i++)
+            {
+                if (sortedRecipe[i] != sortedCurrent[i])
+                {
+                    matched = false;
+                    break;
+                }
+            }
+
+            if (matched)
+            {
+                resultSlot.SetItem(recipe.resultItem);
+                return;
+            }
         }
-        else
-        {
-            resultSlot.ClearSlot();
-        }
+
+        resultSlot.ClearSlot();
     }
 }
