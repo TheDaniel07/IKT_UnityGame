@@ -8,11 +8,7 @@ public class DungeonMapGenerator : AbstractDungeonGenerator
 {
 
     [SerializeField]
-    private int iterations = 10;
-    [SerializeField]
-    public int walkLength = 10;
-    [SerializeField]
-    public bool startRandomly = true;
+    private SimpleRandomWalkData randomWalkParams;
 
     protected override void RunProceduralGeneration()
     {
@@ -26,11 +22,11 @@ public class DungeonMapGenerator : AbstractDungeonGenerator
         var currentPosition = startPosition;
         HashSet<Vector2Int> floorPositions = new HashSet<Vector2Int>();
 
-        for (int i = 0; i < iterations; i++)
+        for (int i = 0; i < randomWalkParams.iterations; i++)
         {
-            var path = ProceduralGeneration.SimpleRandomWalk(currentPosition, walkLength);
+            var path = ProceduralGeneration.SimpleRandomWalk(currentPosition, randomWalkParams.walkLength);
             floorPositions.UnionWith(path);
-            if (startRandomly)
+            if (randomWalkParams.startRandomEachIteration)
             {
                 currentPosition = floorPositions.ElementAt(Random.Range(0, floorPositions.Count));
             }
