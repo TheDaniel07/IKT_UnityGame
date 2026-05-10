@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e58b71739c70dd448804078a2d2d61f7
+guid: 643522bc968f2bd40a87536b65a4bc51
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 195704169952982661
-    second: stone_scaled_20x_pngcrushed_0
+      213: -8205069227925014175
+    second: craftingUI3x3_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: stone_scaled_20x_pngcrushed_0
+      name: craftingUI3x3_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 320
-        height: 320
+        x: 239
+        y: 79
+        width: 742
+        height: 1062
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5863c1bd7e747b200800000000000000
-      internalID: 195704169952982661
+      spriteID: 1697a00720db12e80800000000000000
+      internalID: -8205069227925014175
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      stone_scaled_20x_pngcrushed_0: 195704169952982661
+      craftingUI3x3_0: -8205069227925014175
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
