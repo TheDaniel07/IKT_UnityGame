@@ -15,6 +15,7 @@ public class DungeonMapGenerator : AbstractDungeonGenerator
         HashSet<Vector2Int> floorPositions = StartRandomWalk();
         tilemapVisualizer.Clear();
         tilemapVisualizer.PaintFloorTiles(floorPositions);
+        WallGenerator.CreateWalls(floorPositions, tilemapVisualizer);
     }
 
     protected HashSet<Vector2Int> StartRandomWalk()
