@@ -17,6 +17,7 @@ public class SmeltingManager : MonoBehaviour
     public Slot resultSlot;
     public List<SmeltingRecipe> recipes;
     public int[] validFuelIDs;
+    public InventoryManager inventoryManager;
 
     private void Update()
     {
@@ -42,7 +43,6 @@ public class SmeltingManager : MonoBehaviour
         if (currentItem == null)
         {
             currentItem = item;
-            Debug.Log("Picked up " + item.itemName);
         }
     }
 
@@ -50,6 +50,21 @@ public class SmeltingManager : MonoBehaviour
     {
         slot.ClearSlot();
         CheckForCompletedRecipes();
+    }
+
+    public void OnResultTaken()
+    {
+        if (resultSlot.item == null) return;
+
+        if (inventoryManager != null)
+        {
+            int remaining = inventoryManager.AddItem(resultSlot.item, resultSlot.item.stackCount);
+            if (remaining > 0) return;
+        }
+
+        inputSlot.ClearSlot();
+        fuelSlot.ClearSlot();
+        resultSlot.ClearSlot();
     }
 
     private bool IsValidFuel(int id)

@@ -27,6 +27,7 @@ public class CraftingManager : MonoBehaviour
     public List<Item> itemList;
     public List<CraftingRecipe> recipes;
     public Slot resultSlot;
+    public InventoryManager inventoryManager;
 
     private void Update()
     {
@@ -69,6 +70,25 @@ public class CraftingManager : MonoBehaviour
         slot.ClearSlot();
         itemList[slot.slotIndex] = null;
         CheckForCompletedRecipes();
+    }
+
+    public void OnResultTaken()
+    {
+        if (resultSlot.item == null) return;
+
+        if (inventoryManager != null)
+        {
+            int remaining = inventoryManager.AddItem(resultSlot.item, resultSlot.item.stackCount);
+            if (remaining > 0) return;
+        }
+
+        for (int i = 0; i < craftingSlots.Length; i++)
+        {
+            craftingSlots[i].ClearSlot();
+            if (i < itemList.Count)
+                itemList[i] = null;
+        }
+        resultSlot.ClearSlot();
     }
 
     private int[,] GetNormalizedGrid()
