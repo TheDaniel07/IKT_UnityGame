@@ -16,7 +16,7 @@ public static class WallGenerator
     private static HashSet<Vector2Int> findWallsInDirections(HashSet<Vector2Int> floorPositions, List<Vector2Int> directionList)
     {
         HashSet<Vector2Int> wallPositions = new HashSet<Vector2Int>();
-        foreach(var position in wallPositions)
+        foreach(var position in floorPositions)
         {
             foreach(var direction in directionList)
             {
