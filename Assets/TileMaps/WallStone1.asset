@@ -17,7 +17,7 @@ MonoBehaviour:
   m_DefaultColliderType: 1
   m_MaskType: 0
   m_Random: 0
-  m_PhysicsShapeCheck: 0
+  m_PhysicsShapeCheck: 1
   m_AutoTileDictionary:
     keyData: 
     valueData: []

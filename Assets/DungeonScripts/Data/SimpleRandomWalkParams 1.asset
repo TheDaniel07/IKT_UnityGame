@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ed3da6a2374294b458075d5a48ef98bc, type: 3}
-  m_Name: SimpleRandomWalkParams
+  m_Name: SimpleRandomWalkParams 1
   m_EditorClassIdentifier: Assembly-CSharp::SimpleRandomWalkData
   iterations: 100
-  walkLength: 100
+  walkLength: 2
   startRandomEachIteration: 1
