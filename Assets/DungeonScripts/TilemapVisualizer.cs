@@ -4,12 +4,14 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.UIElements;
+using UnityEngine.WSA;
 using Random = UnityEngine.Random;
 
 public class TilemapVisualizer : MonoBehaviour
 {
     [SerializeField]
-    private Tilemap floorTilemap, wallTilemap, itemTilemap, ladderTilemap;
+    private Tilemap floorTilemap, wallTilemap, itemTilemap, ladderTilemap, oresTilemap;
     [SerializeField]
     private TileBase floorTile, wallTile, ladderTile, oresTile;
 
@@ -27,9 +29,14 @@ public class TilemapVisualizer : MonoBehaviour
         }
         for (int i = 0; i < positions.Count / 300; i++)
         {
-            var ladderLocation = positions.ElementAt(Random.RandomRange(0, positions.Count));
+            var ladderLocation = positions.ElementAt(Random.Range(0, positions.Count));
             Debug.Log(ladderLocation);
-            PaintSingleLadder(ladderLocation, ladderTilemap, ladderTile);
+            PaintSingleLadder(ladderLocation);
+        }
+        for (int i = 0; i < positions.Count / 70; i++)
+        {
+            var oreLocation = positions.ElementAt(Random.Range(0, positions.Count));
+            PaintOre(oreLocation);
         }
     }
 
@@ -41,6 +48,7 @@ public class TilemapVisualizer : MonoBehaviour
 
     public void Clear()
     {
+        oresTilemap.ClearAllTiles();
         ladderTilemap.ClearAllTiles();
         floorTilemap.ClearAllTiles();
         wallTilemap.ClearAllTiles();
@@ -51,9 +59,13 @@ public class TilemapVisualizer : MonoBehaviour
         PaintSingleTile(wallTilemap, wallTile, position);
     }
 
-    static internal void PaintSingleLadder(Vector2Int position, Tilemap tilemap, TileBase tile)
+    internal void PaintSingleLadder(Vector2Int ladderPosition)
     {
-        var tilePosition = tilemap.WorldToCell((Vector3Int)position);
-        tilemap.SetTile(tilePosition, tile);
+        PaintSingleTile(ladderTilemap, ladderTile, ladderPosition);
+    }
+
+    internal void PaintOre(Vector2Int oreLocation)
+    {
+        PaintSingleTile(oresTilemap, oresTile, oreLocation);
     }
 }
