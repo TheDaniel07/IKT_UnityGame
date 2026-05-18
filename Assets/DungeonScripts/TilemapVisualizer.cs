@@ -5,7 +5,6 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEngine.UIElements;
-using UnityEngine.WSA;
 using Random = UnityEngine.Random;
 
 public class TilemapVisualizer : MonoBehaviour
@@ -30,7 +29,6 @@ public class TilemapVisualizer : MonoBehaviour
         for (int i = 0; i < positions.Count / 300; i++)
         {
             var ladderLocation = positions.ElementAt(Random.Range(0, positions.Count));
-            Debug.Log(ladderLocation);
             PaintSingleLadder(ladderLocation);
         }
         for (int i = 0; i < positions.Count / 70; i++)
