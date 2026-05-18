@@ -12,7 +12,6 @@ public class InteractionDetector : MonoBehaviour
         if (context.performed)
         {
             InteractableInRange?.Interact();
-            Debug.Log("pizda");
         }
 
     }
