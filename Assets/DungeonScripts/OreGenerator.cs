@@ -15,7 +15,6 @@ public class OreGenerator : MonoBehaviour
             Vector2Int randomPos = positions.ElementAt(Random.Range(0, positions.Count));
             Vector3 pos = new(randomPos.x, randomPos.y);
             Vector3 offset = new(0.5f, 0.5f);
-            Debug.Log(pos);
             Instantiate(ore, pos+offset, Quaternion.identity, parent);
         }
     }

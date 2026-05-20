@@ -899,6 +899,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   ore: {fileID: 7865955566218267905, guid: 71c08ee7ba008db4eb31cda676cc6fef, type: 3}
   parent: {fileID: 207028407}
+  tilemap: {fileID: 1581592386}
 --- !u!4 &956100893
 Transform:
   m_ObjectHideFlags: 0
@@ -24063,7 +24064,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 350, y: 199}
+  m_AnchoredPosition: {x: 350, y: 177}
   m_SizeDelta: {x: 96, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1876827663
@@ -24514,7 +24515,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 290, y: 199}
+  m_AnchoredPosition: {x: 290, y: 176}
   m_SizeDelta: {x: 93.99, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2020742369
