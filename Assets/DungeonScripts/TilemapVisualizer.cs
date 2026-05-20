@@ -10,10 +10,9 @@ using Random = UnityEngine.Random;
 public class TilemapVisualizer : MonoBehaviour
 {
     [SerializeField]
-    private Tilemap floorTilemap, wallTilemap, itemTilemap, ladderTilemap, oresTilemap;
+    private Tilemap floorTilemap, wallTilemap, itemTilemap, ladderTilemap;
     [SerializeField]
-    private TileBase floorTile, wallTile, ladderTile, oresTile;
-
+    private TileBase floorTile, wallTile, ladderTile;
 
     public void PaintFloorTiles(HashSet<Vector2Int> floorPositions)
     {
@@ -31,11 +30,6 @@ public class TilemapVisualizer : MonoBehaviour
             var ladderLocation = positions.ElementAt(Random.Range(0, positions.Count));
             PaintSingleLadder(ladderLocation);
         }
-        for (int i = 0; i < positions.Count / 70; i++)
-        {
-            var oreLocation = positions.ElementAt(Random.Range(0, positions.Count));
-            PaintOre(oreLocation);
-        }
     }
 
     private void PaintSingleTile(Tilemap tilemap, TileBase tile, Vector2Int position)
@@ -46,7 +40,6 @@ public class TilemapVisualizer : MonoBehaviour
 
     public void Clear()
     {
-        oresTilemap.ClearAllTiles();
         ladderTilemap.ClearAllTiles();
         floorTilemap.ClearAllTiles();
         wallTilemap.ClearAllTiles();
@@ -60,10 +53,5 @@ public class TilemapVisualizer : MonoBehaviour
     internal void PaintSingleLadder(Vector2Int ladderPosition)
     {
         PaintSingleTile(ladderTilemap, ladderTile, ladderPosition);
-    }
-
-    internal void PaintOre(Vector2Int oreLocation)
-    {
-        PaintSingleTile(oresTilemap, oresTile, oreLocation);
     }
 }

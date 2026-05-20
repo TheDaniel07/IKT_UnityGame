@@ -9,13 +9,16 @@ public class DungeonMapGenerator : AbstractDungeonGenerator
 
     [SerializeField]
     private SimpleRandomWalkData randomWalkParams;
+    [SerializeField] private OreGenerator OreGenerator;
 
     protected override void RunProceduralGeneration()
     {
         HashSet<Vector2Int> floorPositions = StartRandomWalk();
         tilemapVisualizer.Clear();
+        OreGenerator.ClearLevel();
         tilemapVisualizer.PaintFloorTiles(floorPositions);
         WallGenerator.CreateWalls(floorPositions, tilemapVisualizer);
+        OreGenerator.GenerateOres(floorPositions);
     }
 
     protected HashSet<Vector2Int> StartRandomWalk()
