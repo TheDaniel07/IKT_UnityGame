@@ -3,6 +3,11 @@ using UnityEngine;
 public class LadderClimb : MonoBehaviour, IInteractable
 {
     [SerializeField] private AbstractDungeonGenerator dungeonGenerator;
+    public int Level { get; private set; }
+    public void Start()
+    {
+        Level = 0;
+    }
     public void Interact()
     {
         ClimbLadder();
@@ -11,5 +16,6 @@ public class LadderClimb : MonoBehaviour, IInteractable
     private void ClimbLadder()
     {
         dungeonGenerator.GenerateDungeon();
+        Level++;
     }
 }
