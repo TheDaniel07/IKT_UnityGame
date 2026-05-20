@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class PauseMenu : MonoBehaviour
 {
-
     public GameObject pauseMenu;
     public GameObject settingsPanel;
     public GameObject achievementsPanel;
@@ -12,17 +11,28 @@ public class PauseMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            bool isOpening = !pauseMenu.activeSelf;
+            HandleEscape();
+        }
+    }
 
-            pauseMenu.SetActive(isOpening);
+    void HandleEscape()
+    {
+        if (settingsPanel.activeSelf)
+        {
+            CloseSettings();
+            return;
+        }
 
-            if (!isOpening)
-            {
-                settingsPanel.SetActive(false);
-                achievementsPanel.SetActive(false);
-            }
+        if (achievementsPanel.activeSelf)
+        {
+            CloseAchievements();
+            return;
+        }
 
-            Time.timeScale = isOpening ? 0 : 1;
+        if (pauseMenu.activeSelf)
+        {
+            ResumeButton();
+            return;
         }
     }
 
@@ -31,39 +41,30 @@ public class PauseMenu : MonoBehaviour
         pauseMenu.SetActive(false);
         settingsPanel.SetActive(false);
         achievementsPanel.SetActive(false);
-        Time.timeScale = 1;
-    }
-
-    public void MainMenuButton()
-    {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
+        PauseController.SetPause(false);
     }
 
     public void OpenSettings()
     {
         pauseMenu.SetActive(false);
         settingsPanel.SetActive(true);
+        achievementsPanel.SetActive(false);
     }
 
-    public void CloseSettings()
+    public void OpenAchievements()
     {
-            settingsPanel.SetActive(false);
-            pauseMenu.SetActive(true);
+        pauseMenu.SetActive(false);
+        achievementsPanel.SetActive(true);
+        settingsPanel.SetActive(false);
     }
 
-    public void BackButton()
+    void CloseSettings()
     {
         settingsPanel.SetActive(false);
         pauseMenu.SetActive(true);
     }
 
-    public void OpenAchievements()
-    {
-        achievementsPanel.SetActive(true);
-        pauseMenu.SetActive(false);
-    }
-
-    public void CloseAchievements()
+    void CloseAchievements()
     {
         achievementsPanel.SetActive(false);
         pauseMenu.SetActive(true);

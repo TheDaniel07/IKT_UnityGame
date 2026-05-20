@@ -12,9 +12,14 @@ public class MenuController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (!Input.GetKeyDown(KeyCode.Escape))
+            return;
+
+        if (!menuCanvas.activeSelf)
         {
-            menuCanvas.SetActive(!menuCanvas.activeSelf);
+            menuCanvas.SetActive(true);
+            PauseController.SetPause(true);
+            return;
         }
     }
 }
