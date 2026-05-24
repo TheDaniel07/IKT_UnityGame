@@ -7,7 +7,7 @@ public class LadderClimb : MonoBehaviour, IInteractable
     public int Level { get; private set; }
     public void Start()
     {
-        Level = 0;
+        Level = 1;
     }
     public void Interact()
     {
