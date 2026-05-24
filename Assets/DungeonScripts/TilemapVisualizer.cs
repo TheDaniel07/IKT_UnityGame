@@ -25,11 +25,9 @@ public class TilemapVisualizer : MonoBehaviour
         {
             PaintSingleTile(tilemap, tile, position);
         }
-        for (int i = 0; i < positions.Count / 300; i++)
-        {
-            var ladderLocation = positions.ElementAt(Random.Range(0, positions.Count));
-            PaintSingleLadder(ladderLocation);
-        }
+
+        var ladderLocation = positions.ElementAt(Random.Range(0, positions.Count));
+        PaintSingleLadder(ladderLocation);
     }
 
     private void PaintSingleTile(Tilemap tilemap, TileBase tile, Vector2Int position)

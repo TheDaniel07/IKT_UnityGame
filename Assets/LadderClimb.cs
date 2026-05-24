@@ -18,6 +18,6 @@ public class LadderClimb : MonoBehaviour, IInteractable
     {
         dungeonGenerator.GenerateDungeon();
         player.transform.position = Vector3.zero;
-        Level++;
+        Level = Level+10;
     }
 }

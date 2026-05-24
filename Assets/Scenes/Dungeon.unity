@@ -1610,7 +1610,7 @@ MonoBehaviour:
   - {fileID: 7852294547485609405, guid: 2ecc3b2c2b44382429fc44aad4b731d1, type: 3}
   - {fileID: 2531007910009016144, guid: 5583f113aa0991f4a8e36600bc21452c, type: 3}
   parent: {fileID: 207028407}
-  tilemap: {fileID: 1581592386}
+  ladderClimb: {fileID: 820801706}
 --- !u!4 &956100893
 Transform:
   m_ObjectHideFlags: 0
@@ -25466,10 +25466,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7865955566218267905, guid: 71c08ee7ba008db4eb31cda676cc6fef, type: 3}
-      propertyPath: m_Icon
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7865955566218267905, guid: 71c08ee7ba008db4eb31cda676cc6fef, type: 3}
       propertyPath: m_Name
       value: Copper
       objectReference: {fileID: 0}
@@ -25839,5 +25835,5 @@ SceneRoots:
   - {fileID: 957196308}
   - {fileID: 956100893}
   - {fileID: 354698148}
-  - {fileID: 207028407}
   - {fileID: 821510761}
+  - {fileID: 207028407}
