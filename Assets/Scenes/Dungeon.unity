@@ -565,11 +565,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &524596883 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7865955566218267905, guid: 71c08ee7ba008db4eb31cda676cc6fef, type: 3}
-  m_PrefabInstance: {fileID: 2529532811760088175}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -25317,7 +25312,7 @@ Transform:
   m_GameObject: {fileID: 1988718483}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.01, y: -1.1194, z: 0}
+  m_LocalPosition: {x: 0.02, y: -1.15, z: 0}
   m_LocalScale: {x: 0.4997, y: 1.0966887, z: 0.4997}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -25357,7 +25352,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.18336543}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -25367,7 +25362,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 1.3667305}
   m_EdgeRadius: 0
 --- !u!212 &1988718486
 SpriteRenderer:
@@ -25630,6 +25625,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gold
       objectReference: {fileID: 0}
+    - target: {fileID: 7433353017226741160, guid: 237cb7de0d533324f9610fd1669943e2, type: 3}
+      propertyPath: maxHealth
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7433353017226741160, guid: 237cb7de0d533324f9610fd1669943e2, type: 3}
+      propertyPath: setMaxHealth
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -25683,6 +25686,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5101321179730957386, guid: 71c08ee7ba008db4eb31cda676cc6fef, type: 3}
+      propertyPath: maxHealth
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5101321179730957386, guid: 71c08ee7ba008db4eb31cda676cc6fef, type: 3}
+      propertyPath: setMaxHealth
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7865955566218267905, guid: 71c08ee7ba008db4eb31cda676cc6fef, type: 3}
       propertyPath: m_Name
       value: Copper
@@ -25690,28 +25701,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7865955566218267905, guid: 71c08ee7ba008db4eb31cda676cc6fef, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2529532811760088177}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71c08ee7ba008db4eb31cda676cc6fef, type: 3}
 --- !u!4 &2529532811760088176 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1818270535276433647, guid: 71c08ee7ba008db4eb31cda676cc6fef, type: 3}
   m_PrefabInstance: {fileID: 2529532811760088175}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2529532811760088177
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 524596883}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b25378e04e3e5d64ca99ffe1d321f335, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
 --- !u!1001 &3767654310904685690
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25720,6 +25716,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 821510761}
     m_Modifications:
+    - target: {fileID: 647680743626151451, guid: 5583f113aa0991f4a8e36600bc21452c, type: 3}
+      propertyPath: maxHealth
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 647680743626151451, guid: 5583f113aa0991f4a8e36600bc21452c, type: 3}
+      propertyPath: setMaxHealth
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 2531007910009016144, guid: 5583f113aa0991f4a8e36600bc21452c, type: 3}
       propertyPath: m_Name
       value: Uranium
@@ -25780,6 +25784,14 @@ PrefabInstance:
     - target: {fileID: 30607535298779731, guid: 8771be1ffbf8edf4da6f96b1cede566e, type: 3}
       propertyPath: m_Name
       value: Ruby
+      objectReference: {fileID: 0}
+    - target: {fileID: 3138526360043455256, guid: 8771be1ffbf8edf4da6f96b1cede566e, type: 3}
+      propertyPath: maxHealth
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3138526360043455256, guid: 8771be1ffbf8edf4da6f96b1cede566e, type: 3}
+      propertyPath: setMaxHealth
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8394158739953502141, guid: 8771be1ffbf8edf4da6f96b1cede566e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -25878,6 +25890,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coal
       objectReference: {fileID: 0}
+    - target: {fileID: 7843340130601617679, guid: cb246968c18f6ac44ba15764462af24f, type: 3}
+      propertyPath: maxHealth
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7843340130601617679, guid: cb246968c18f6ac44ba15764462af24f, type: 3}
+      propertyPath: setMaxHealth
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -25930,6 +25950,14 @@ PrefabInstance:
     - target: {fileID: 1795321944264511571, guid: 2ecc3b2c2b44382429fc44aad4b731d1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5123407753903461622, guid: 2ecc3b2c2b44382429fc44aad4b731d1, type: 3}
+      propertyPath: maxHealth
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5123407753903461622, guid: 2ecc3b2c2b44382429fc44aad4b731d1, type: 3}
+      propertyPath: setMaxHealth
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7852294547485609405, guid: 2ecc3b2c2b44382429fc44aad4b731d1, type: 3}
       propertyPath: m_Name
@@ -25988,6 +26016,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5854150310418316921, guid: 26133669fd7302940a9fb18a18ae0429, type: 3}
+      propertyPath: maxHealth
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5854150310418316921, guid: 26133669fd7302940a9fb18a18ae0429, type: 3}
+      propertyPath: setMaxHealth
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 8853209131516028722, guid: 26133669fd7302940a9fb18a18ae0429, type: 3}
       propertyPath: m_Name
       value: Iron
@@ -26008,6 +26044,14 @@ PrefabInstance:
     - target: {fileID: 1416384670010052209, guid: 344e8229146371141bca218a58fbfa51, type: 3}
       propertyPath: m_Name
       value: Stone
+      objectReference: {fileID: 0}
+    - target: {fileID: 4056325060912879418, guid: 344e8229146371141bca218a58fbfa51, type: 3}
+      propertyPath: maxHealth
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4056325060912879418, guid: 344e8229146371141bca218a58fbfa51, type: 3}
+      propertyPath: setMaxHealth
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7474486471404442527, guid: 344e8229146371141bca218a58fbfa51, type: 3}
       propertyPath: m_LocalPosition.x

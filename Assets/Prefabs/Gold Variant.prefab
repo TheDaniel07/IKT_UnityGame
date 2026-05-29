@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -566253099, guid: 66c634cf8994a044a86aead72156e815, type: 3}
+    - target: {fileID: 5101321179730957386, guid: 71c08ee7ba008db4eb31cda676cc6fef, type: 3}
+      propertyPath: setMaxHealth
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7865955566218267905, guid: 71c08ee7ba008db4eb31cda676cc6fef, type: 3}
       propertyPath: m_Icon
       value: 

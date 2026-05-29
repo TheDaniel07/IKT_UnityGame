@@ -2,9 +2,11 @@ using UnityEngine;
 
 public class Mineable : MonoBehaviour
 {
-    float health, maxHealth = 3f;
+    public float setMaxHealth;
+    float health, maxHealth;
     void Start()
     {
+        maxHealth = setMaxHealth;
         health = maxHealth;
     }
     public void TakeDamage(float damage)

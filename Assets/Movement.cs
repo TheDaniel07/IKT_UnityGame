@@ -42,10 +42,7 @@ public class Movement : MonoBehaviour
             } else isMoving = false;
 
             input.Normalize();
-            return;
         }
-
-        Debug.Log(isMoving);
     }
 
     private void FixedUpdate()

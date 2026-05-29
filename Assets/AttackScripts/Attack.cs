@@ -6,17 +6,21 @@ public class Attack : MonoBehaviour
     public GameObject Melee;
     bool isAttacking = false;
     float duration = 0.3f;
-    float Timer = 0f;
+    float timer = 0f;
 
     private void Start()
     {
         Melee.SetActive(false);
     }
+
+    private void Update()
+    {
+        CheckMeleeTimer();
+    }
     public void CheckInput(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
-            CheckMeleeTimer();
             OnAttack();
         }
     }
@@ -33,11 +37,15 @@ public class Attack : MonoBehaviour
 
     private void CheckMeleeTimer()
     {
-        if(Timer >= duration)
+        if (isAttacking)
         {
-            Timer = 0f;
-            isAttacking = false;
-            Melee.SetActive(false);
+            timer += Time.deltaTime;
+            if(timer >= duration)
+            {
+                timer = 0;
+                isAttacking = false;
+                Melee.SetActive(false);
+            }
         }
     }
 }
