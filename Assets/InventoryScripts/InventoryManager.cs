@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 
 public class InventoryManager : MonoBehaviour
 {
@@ -8,6 +9,10 @@ public class InventoryManager : MonoBehaviour
 
     [Header("UI")]
     public GameObject inventoryPanel;
+    public Button SmeltingButton;
+    public Button CraftingButton;
+    public GameObject SmeltingPanel;
+    public GameObject CraftingPanel;
 
     [Header("Slots")]
     public Slot[] inventorySlots;
@@ -28,6 +33,8 @@ public class InventoryManager : MonoBehaviour
     private string heldItemName = "";
     private int heldMaxStack = 99;
     private bool inventoryOpen = false;
+    private bool smeltingOpen = false;
+    private bool craftingOpen = false;
 
     private void Awake()
     {
@@ -56,6 +63,10 @@ public class InventoryManager : MonoBehaviour
 
         if (inventoryPanel != null)
             inventoryPanel.SetActive(false);
+            SmeltingButton.gameObject.SetActive(false);
+            CraftingButton.gameObject.SetActive(false);
+            SmeltingPanel.SetActive(false);
+            CraftingPanel.SetActive(false);
 
         SetCursorItemVisible(false);
         UpdateHotbarSelector();
@@ -63,7 +74,7 @@ public class InventoryManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.I))
             ToggleInventory();
 
         if (heldItem != null || heldStackCount > 0)
@@ -100,6 +111,9 @@ public class InventoryManager : MonoBehaviour
         inventoryOpen = !inventoryOpen;
         if (inventoryPanel != null)
             inventoryPanel.SetActive(inventoryOpen);
+            SmeltingButton.gameObject.SetActive(inventoryOpen);
+            CraftingButton.gameObject.SetActive(inventoryOpen);
+
 
         if (!inventoryOpen && IsHoldingItem())
             ReturnHeldItem();
@@ -521,4 +535,25 @@ public class InventoryManager : MonoBehaviour
             hotbarSelector.enabled = true;
         }
     }
+
+    public void ToggleSmelting()
+    {
+        smeltingOpen = !smeltingOpen;
+        if (SmeltingPanel != null)
+            SmeltingPanel.SetActive(smeltingOpen);
+
+        if (!smeltingOpen && IsHoldingItem())
+            ReturnHeldItem();
+    }
+
+    public void ToggleCrafting()
+    {
+        craftingOpen = !craftingOpen;
+        if (CraftingPanel != null)
+            CraftingPanel.SetActive(craftingOpen);
+
+        if (!smeltingOpen && IsHoldingItem())
+            ReturnHeldItem();
+    }
 }
+
