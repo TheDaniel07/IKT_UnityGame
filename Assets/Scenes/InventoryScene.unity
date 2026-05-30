@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 37390939}
   - component: {fileID: 37390937}
   - component: {fileID: 37390938}
+  - component: {fileID: 37390941}
   - component: {fileID: 37390940}
   m_Layer: 0
   m_Name: GameManager
@@ -200,7 +201,6 @@ MonoBehaviour:
   toggleKey: 102
   recipeListParent: {fileID: 327502115}
   recipeRowPrefab: {fileID: 2993587875164270801, guid: 1b059461673efca46a1adddf1b42d8d4, type: 3}
-  selectedRecipeInfoText: {fileID: 825024642}
 --- !u!114 &37390939
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -320,6 +320,18 @@ MonoBehaviour:
     icon: {fileID: 21300000, guid: 4d2dc702b5590ca4096c069617c12ce3, type: 3}
   - itemId: hammer_titanium
     icon: {fileID: 21300000, guid: 641b3097bf756c24191f45e518fab1f2, type: 3}
+--- !u!114 &37390941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 37390934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ceaaf48f7af9c142b4116332e66ce5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MenuManager
 --- !u!1 &136018453
 GameObject:
   m_ObjectHideFlags: 0

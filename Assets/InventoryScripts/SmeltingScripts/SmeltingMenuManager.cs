@@ -9,7 +9,6 @@ public class SmeltingMenuManager : MonoBehaviour
     [SerializeField] private KeyCode toggleKey = KeyCode.F;
     [SerializeField] private Transform recipeListParent;
     [SerializeField] private GameObject recipeRowPrefab;
-    [SerializeField] private TextMeshProUGUI selectedRecipeInfoText;
 
     private bool _isOpen = false;
     private List<GameObject> _rows = new();
@@ -30,6 +29,7 @@ public class SmeltingMenuManager : MonoBehaviour
     public void OpenMenu()
     {
         if (_isOpen) return;
+        MenuManager.Instance.RequestOpen(this);
         SetMenuVisible(true);
         _isOpen = true;
         RefreshList();
@@ -41,7 +41,7 @@ public class SmeltingMenuManager : MonoBehaviour
         if (!_isOpen) return;
         SetMenuVisible(false);
         _isOpen = false;
-        if (selectedRecipeInfoText != null) selectedRecipeInfoText.text = "";
+        MenuManager.Instance.NotifyClosed(this);
         Debug.Log("[SmeltingMenuManager] Menu closed.");
     }
 
@@ -90,23 +90,6 @@ public class SmeltingMenuManager : MonoBehaviour
 
     private void OnRecipeSelected(Recipe recipe)
     {
-        if (selectedRecipeInfoText != null)
-        {
-            var allItems = InventoryManager.Instance.GetAllItems();
-            string outputName = allItems.Find(i => i.itemId == recipe.outputItemId)?.displayName ?? recipe.outputItemId;
-
-            var lines = new System.Text.StringBuilder();
-            lines.AppendLine($"Smelt: {outputName} x{recipe.outputAmount}");
-            lines.AppendLine("Required:");
-            foreach (var ing in recipe.ingredients)
-            {
-                string ingName = allItems.Find(i => i.itemId == ing.itemId)?.displayName ?? ing.itemId;
-                int have = InventoryManager.Instance.GetQuantity(ing.itemId);
-                lines.AppendLine($"  {ingName}: {have}/{ing.amount}");
-            }
-            selectedRecipeInfoText.text = lines.ToString();
-        }
-
         RecipeDatabase.ExecuteRecipe(recipe);
         RefreshList();
         InventoryExporter.Export(InventoryManager.Instance.GetAllItems());

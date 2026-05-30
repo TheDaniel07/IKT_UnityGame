@@ -32,6 +32,7 @@ public class InventoryMenuManager : MonoBehaviour
     public void OpenMenu()
     {
         if (_isOpen) return;
+        MenuManager.Instance.RequestOpen(this);
         SetMenuVisible(true);
         _isOpen = true;
         RefreshList();
@@ -45,6 +46,7 @@ public class InventoryMenuManager : MonoBehaviour
         if (exportOnClose) DoExport();
         SetMenuVisible(false);
         _isOpen = false;
+        MenuManager.Instance.NotifyClosed(this);
         Debug.Log("[InventoryMenuManager] Menu closed.");
     }
 
@@ -69,23 +71,20 @@ public class InventoryMenuManager : MonoBehaviour
             .Where(i => i.quantity > 0)
             .OrderBy(g => g.quantity);
 
-
-        int i = 0;
         foreach (var item in allItems)
         {
-            var row = Instantiate(itemRowPrefab, listParent);
-            _rows.Add(row);
+                var row = Instantiate(itemRowPrefab, listParent);
+                _rows.Add(row);
 
-            var label = row.GetComponentInChildren<TextMeshProUGUI>();
-            if (label != null) label.text = $"{item.displayName} x{item.quantity}";
+                var label = row.GetComponentInChildren<TextMeshProUGUI>();
+                if (label != null) label.text = $"{item.displayName} x{item.quantity}";
 
-            var iconImage = row.transform.Find("Icon")?.GetComponent<Image>();
-            if (iconImage != null && item?.icon != null)
+            var iconImage = row.GetComponent<Image>() ?? row.transform.Find("Icon")?.GetComponent<Image>();
+            if (iconImage != null && item.icon != null)
             {
                 iconImage.sprite = item.icon;
                 iconImage.enabled = true;
             }
-            i++;
         }
     }
 }

@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using Unity.VisualScripting;
 
 public class CraftingMenuManager : MonoBehaviour
 {
@@ -31,6 +30,7 @@ public class CraftingMenuManager : MonoBehaviour
     public void OpenMenu()
     {
         if (_isOpen) return;
+        MenuManager.Instance.RequestOpen(this);
         SetMenuVisible(true);
         _isOpen = true;
         RefreshList();
@@ -43,6 +43,7 @@ public class CraftingMenuManager : MonoBehaviour
         SetMenuVisible(false);
         _isOpen = false;
         if (selectedRecipeInfoText != null) selectedRecipeInfoText.text = "";
+        MenuManager.Instance.NotifyClosed(this);
         Debug.Log("[CraftingMenuManager] Menu closed.");
     }
 
