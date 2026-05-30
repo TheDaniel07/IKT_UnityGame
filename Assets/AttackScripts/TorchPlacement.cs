@@ -9,8 +9,11 @@ public class TorchPlacement : MonoBehaviour
 
     public void PlaceTorch(InputAction.CallbackContext context)
     {
-        Vector3 playerPosition = player.transform.position;
-        Instantiate(Torch, playerPosition, Quaternion.identity, parent);
+        if (context.performed)
+        {
+            Vector3 playerPosition = player.transform.position;
+            Instantiate(Torch, playerPosition, Quaternion.identity, parent);
+        }
     }
 
 }
