@@ -15,10 +15,15 @@ public class AIChase : MonoBehaviour
         
     }
 
+    private void FixedUpdate()
+    {
+        PauseMenu = GameObject.FindGameObjectWithTag("PauseMenu");
+    }
+
     // Update is called once per frame
     void Update()
     {
-        PauseMenu = GameObject.FindGameObjectWithTag("PauseMenu");
+        
         distance = Vector2.Distance(transform.position, player.transform.position);
         Vector2 direction = player.transform.position - transform.position;
         direction.Normalize();
