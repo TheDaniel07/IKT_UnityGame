@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 public class Attack : MonoBehaviour
 {
     public GameObject Pickaxe, Sword;
+    public PlayerHotbar hotbar;
     bool isAttacking = false;
     float duration = 0.3f;
     float timer = 0f;
@@ -30,9 +31,15 @@ public class Attack : MonoBehaviour
 
     private void OnAttack()
     {
-        if (!isAttacking)
+        if (!isAttacking && hotbar.InHand == "pickaxe")
         {
-            Melee.SetActive(true);
+            Pickaxe.SetActive(true);
+            isAttacking = true;
+            //Animation playback
+        }
+        if (!isAttacking && hotbar.InHand == "sword")
+        {
+            Sword.SetActive(true);
             isAttacking = true;
             //Animation playback
         }
@@ -47,7 +54,8 @@ public class Attack : MonoBehaviour
             {
                 timer = 0;
                 isAttacking = false;
-                Melee.SetActive(false);
+                Pickaxe.SetActive(false);
+                Sword.SetActive(false);
             }
         }
     }

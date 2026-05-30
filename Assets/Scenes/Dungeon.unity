@@ -960,8 +960,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -626021475
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 8bc3be36d5a0d16408e3e23264825afa, type: 3}
@@ -987,11 +987,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   attackDamage: 20
-  attackRange: 0.5
-  attackPoint: {fileID: 0}
-  enemyLayers:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -35540,8 +35535,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e68e2d5345689b74d81504bfb4120526, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  Melee: {fileID: 1988718483}
-  attackDamage: 10
+  Pickaxe: {fileID: 1988718483}
+  Sword: {fileID: 441595249}
+  hotbar: {fileID: 1951485346}
 --- !u!114 &1951485344
 MonoBehaviour:
   m_ObjectHideFlags: 0
