@@ -19,26 +19,58 @@ public class InventoryManager : MonoBehaviour
     {
         var all = new List<InventoryItemData>
         {
+            // Ores
             new InventoryItemData { itemId = "coal_ore",          displayName = "Coal Ore",          quantity = 0, category = "Ore" },
-            new InventoryItemData { itemId = "coal_smelted",      displayName = "Coal Smelted",      quantity = 0, category = "Smelted" },
-            new InventoryItemData { itemId = "copper_ore",        displayName = "Copper Ore",        quantity = 0, category = "Ore" },
-            new InventoryItemData { itemId = "copper_smelted",    displayName = "Copper Smelted",    quantity = 0, category = "Smelted" },
+            new InventoryItemData { itemId = "copper_ore",        displayName = "Copper Ore",        quantity = 5, category = "Ore" },
             new InventoryItemData { itemId = "iron_ore",          displayName = "Iron Ore",          quantity = 0, category = "Ore" },
-            new InventoryItemData { itemId = "iron_smelted",      displayName = "Iron Smelted",      quantity = 0, category = "Smelted" },
-            new InventoryItemData { itemId = "diamond_ore",       displayName = "Diamond Ore",       quantity = 0, category = "Ore" },
-            new InventoryItemData { itemId = "diamond_smelted",   displayName = "Diamond Smelted",   quantity = 0, category = "Smelted" },
+            new InventoryItemData { itemId = "diamond_ore",       displayName = "Diamond Ore",       quantity = 3, category = "Ore" },
             new InventoryItemData { itemId = "gold_ore",          displayName = "Gold Ore",          quantity = 0, category = "Ore" },
-            new InventoryItemData { itemId = "gold_smelted",      displayName = "Gold Smelted",      quantity = 0, category = "Smelted" },
-            new InventoryItemData { itemId = "titanium_ore",      displayName = "Titanium Ore",      quantity = 0, category = "Ore" },
-            new InventoryItemData { itemId = "titanium_smelted",  displayName = "Titanium Smelted",  quantity = 0, category = "Smelted" },
+            new InventoryItemData { itemId = "titanium_ore",      displayName = "Titanium Ore",      quantity = 2, category = "Ore" },
             new InventoryItemData { itemId = "ruby_ore",          displayName = "Ruby Ore",          quantity = 0, category = "Ore" },
+            new InventoryItemData { itemId = "uranium_ore",       displayName = "Uranium Ore",       quantity = 1, category = "Ore" },
+            // Smelted
+            new InventoryItemData { itemId = "coal_smelted",      displayName = "Coal Smelted",      quantity = 15, category = "Smelted" },
+            new InventoryItemData { itemId = "copper_smelted",    displayName = "Copper Smelted",    quantity = 0, category = "Smelted" },
+            new InventoryItemData { itemId = "iron_smelted",      displayName = "Iron Smelted",      quantity = 0, category = "Smelted" },
+            new InventoryItemData { itemId = "diamond_smelted",   displayName = "Diamond Smelted",   quantity = 0, category = "Smelted" },
+            new InventoryItemData { itemId = "gold_smelted",      displayName = "Gold Smelted",      quantity = 0, category = "Smelted" },
+            new InventoryItemData { itemId = "titanium_smelted",  displayName = "Titanium Smelted",  quantity = 4, category = "Smelted" },
             new InventoryItemData { itemId = "ruby_smelted",      displayName = "Ruby Smelted",      quantity = 0, category = "Smelted" },
-            new InventoryItemData { itemId = "uranium_ore",       displayName = "Uranium Ore",       quantity = 0, category = "Ore" },
             new InventoryItemData { itemId = "uranium_smelted",   displayName = "Uranium Smelted",   quantity = 0, category = "Smelted" },
-            new InventoryItemData { itemId = "wood_log",          displayName = "Wood Log",          quantity = 0, category = "Wood" },
+            // Wood
+            new InventoryItemData { itemId = "wood_log",          displayName = "Wood Log",          quantity = 15, category = "Wood" },
             new InventoryItemData { itemId = "wood_plank",        displayName = "Wood Plank",        quantity = 0, category = "Wood" },
             new InventoryItemData { itemId = "wood_stick",        displayName = "Wood Stick",        quantity = 0, category = "Wood" },
-            new InventoryItemData { itemId = "stone",             displayName = "Stone",             quantity = 0, category = "Material" },
+            // Material
+            new InventoryItemData { itemId = "stone",             displayName = "Stone",             quantity = 3, category = "Material" },
+            // Pickaxes
+            new InventoryItemData { itemId = "pickaxe_wooden",    displayName = "Wooden Pickaxe",    quantity = 0, category = "Pickaxe" },
+            new InventoryItemData { itemId = "pickaxe_stone",     displayName = "Stone Pickaxe",     quantity = 0, category = "Pickaxe" },
+            new InventoryItemData { itemId = "pickaxe_copper",    displayName = "Copper Pickaxe",    quantity = 0, category = "Pickaxe" },
+            new InventoryItemData { itemId = "pickaxe_iron",      displayName = "Iron Pickaxe",      quantity = 0, category = "Pickaxe" },
+            new InventoryItemData { itemId = "pickaxe_diamond",   displayName = "Diamond Pickaxe",   quantity = 0, category = "Pickaxe" },
+            new InventoryItemData { itemId = "pickaxe_titanium",  displayName = "Titanium Pickaxe",  quantity = 0, category = "Pickaxe" },
+            // Swords
+            new InventoryItemData { itemId = "sword_wooden",      displayName = "Wooden Sword",      quantity = 0, category = "Sword" },
+            new InventoryItemData { itemId = "sword_stone",       displayName = "Stone Sword",       quantity = 0, category = "Sword" },
+            new InventoryItemData { itemId = "sword_copper",      displayName = "Copper Sword",      quantity = 0, category = "Sword" },
+            new InventoryItemData { itemId = "sword_iron",        displayName = "Iron Sword",        quantity = 0, category = "Sword" },
+            new InventoryItemData { itemId = "sword_diamond",     displayName = "Diamond Sword",     quantity = 0, category = "Sword" },
+            new InventoryItemData { itemId = "sword_titanium",    displayName = "Titanium Sword",    quantity = 0, category = "Sword" },
+            // Axes
+            new InventoryItemData { itemId = "axe_wooden",        displayName = "Wooden Axe",        quantity = 0, category = "Axe" },
+            new InventoryItemData { itemId = "axe_stone",         displayName = "Stone Axe",         quantity = 0, category = "Axe" },
+            new InventoryItemData { itemId = "axe_copper",        displayName = "Copper Axe",        quantity = 0, category = "Axe" },
+            new InventoryItemData { itemId = "axe_iron",          displayName = "Iron Axe",          quantity = 0, category = "Axe" },
+            new InventoryItemData { itemId = "axe_diamond",       displayName = "Diamond Axe",       quantity = 0, category = "Axe" },
+            new InventoryItemData { itemId = "axe_titanium",      displayName = "Titanium Axe",      quantity = 0, category = "Axe" },
+            // Hammers
+            new InventoryItemData { itemId = "hammer_wooden",     displayName = "Wooden Hammer",     quantity = 0, category = "Hammer" },
+            new InventoryItemData { itemId = "hammer_stone",      displayName = "Stone Hammer",      quantity = 0, category = "Hammer" },
+            new InventoryItemData { itemId = "hammer_copper",     displayName = "Copper Hammer",     quantity = 0, category = "Hammer" },
+            new InventoryItemData { itemId = "hammer_iron",       displayName = "Iron Hammer",       quantity = 0, category = "Hammer" },
+            new InventoryItemData { itemId = "hammer_diamond",    displayName = "Diamond Hammer",    quantity = 0, category = "Hammer" },
+            new InventoryItemData { itemId = "hammer_titanium",   displayName = "Titanium Hammer",   quantity = 0, category = "Hammer" },
         };
         foreach (var item in all)
             _items[item.itemId] = item;
