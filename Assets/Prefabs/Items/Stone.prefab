@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2983470215070845405}
   - component: {fileID: 5557094733765928217}
   - component: {fileID: 2875685046534280721}
+  - component: {fileID: 4257452231639382547}
   m_Layer: 5
   m_Name: Stone
   m_TagString: Smelting
@@ -122,3 +123,15 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &4257452231639382547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2839900796921990669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 603f043fb14b0d8479b9a788970375e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ItemDragHandler

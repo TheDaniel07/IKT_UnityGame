@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 986196364992928119}
   - component: {fileID: 7875733870418481431}
   - component: {fileID: 4283989137050291092}
+  - component: {fileID: 1687055012408778943}
   m_Layer: 5
   m_Name: GoldOre
   m_TagString: Smelting
@@ -122,3 +123,15 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1687055012408778943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 829386139920994651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 603f043fb14b0d8479b9a788970375e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ItemDragHandler

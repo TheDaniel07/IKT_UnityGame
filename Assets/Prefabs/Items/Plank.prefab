@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2524343536139481278}
   - component: {fileID: 5755582216609806408}
   - component: {fileID: 8742839952587075913}
+  - component: {fileID: 6047762048964084345}
   m_Layer: 5
   m_Name: Plank
   m_TagString: Smelting
@@ -122,3 +123,15 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &6047762048964084345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3159956879673143057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 603f043fb14b0d8479b9a788970375e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ItemDragHandler
