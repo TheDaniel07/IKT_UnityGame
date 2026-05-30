@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,28 +8,53 @@ public class Item : MonoBehaviour
     public int itemID;
     public int stackCount = 1;
     public int maxStack = 99;
-    private Image itemImage;
+
+    private Image _image;
+    private SpriteRenderer _spriteRenderer;
 
     private void Awake()
     {
-        itemImage = GetComponent<Image>();
+        _image = GetComponent<Image>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     public void SetVisible(bool visible)
     {
-        if (itemImage == null)
-            itemImage = GetComponent<Image>();
+        if (_image == null) _image = GetComponent<Image>();
+        if (_spriteRenderer == null) _spriteRenderer = GetComponent<SpriteRenderer>();
 
-        Color c = itemImage.color;
-        c.a = visible ? 1f : 0f;
-        itemImage.color = c;
+        if (_image != null)
+        {
+            Color c = _image.color;
+            c.a = visible ? 1f : 0f;
+            _image.color = c;
+        }
+
+        if (_spriteRenderer != null)
+        {
+            Color c = _spriteRenderer.color;
+            c.a = visible ? 1f : 0f;
+            _spriteRenderer.color = c;
+        }
     }
 
     public Sprite GetSprite()
     {
-        if (itemImage == null)
-            itemImage = GetComponent<Image>();
-        return itemImage.sprite;
+        if (_image == null) _image = GetComponent<Image>();
+        if (_spriteRenderer == null) _spriteRenderer = GetComponent<SpriteRenderer>();
+
+        if (_image != null) return _image.sprite;
+        if (_spriteRenderer != null) return _spriteRenderer.sprite;
+        return null;
+    }
+
+    public void SetSprite(Sprite sprite)
+    {
+        if (_image == null) _image = GetComponent<Image>();
+        if (_spriteRenderer == null) _spriteRenderer = GetComponent<SpriteRenderer>();
+
+        if (_image != null) _image.sprite = sprite;
+        if (_spriteRenderer != null) _spriteRenderer.sprite = sprite;
     }
 
     public int AddToStack(int amount)
