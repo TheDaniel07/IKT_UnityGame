@@ -4,6 +4,14 @@ using UnityEngine.InputSystem;
 public class InteractionDetector : MonoBehaviour
 {
     private IInteractable InteractableInRange = null;
+    public GameObject Aim;
+    public GameObject Melee;
+
+    private void Update()
+    {
+        isAimOn();
+    }
+
     public void OnInteract(InputAction.CallbackContext context)
     {
         if (context.performed)
@@ -25,6 +33,19 @@ public class InteractionDetector : MonoBehaviour
         if (collision.TryGetComponent(out IInteractable interactable) && interactable == InteractableInRange)
         {
             InteractableInRange = null;
+        }
+    }
+
+    private void isAimOn()
+    {
+        if (!Aim.activeSelf)
+        {
+            Aim.SetActive(true);
+            Melee.SetActive(false);
+        }
+        else if (Aim.activeSelf)
+        {
+            return;
         }
     }
 }

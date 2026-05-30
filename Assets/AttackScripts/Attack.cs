@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 public class Attack : MonoBehaviour
 {
     public GameObject Melee;
+    public float attackDamage = 10f;
     bool isAttacking = false;
     float duration = 0.3f;
     float timer = 0f;
@@ -16,10 +17,21 @@ public class Attack : MonoBehaviour
     private void Update()
     {
         CheckMeleeTimer();
+        CheckInput();
     }
+    /*
     public void CheckInput(InputAction.CallbackContext context)
     {
         if (context.performed)
+        {
+            OnAttack();
+        }
+    }
+    */
+
+    public void CheckInput()
+    {
+        if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             OnAttack();
         }
