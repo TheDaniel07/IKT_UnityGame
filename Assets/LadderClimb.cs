@@ -7,6 +7,7 @@ public class LadderClimb : MonoBehaviour, IInteractable
     public int Level { get; private set; }
     public void Start()
     {
+        FadeInGameStart();
         Level = 1;
     }
     public void Interact()
@@ -16,8 +17,20 @@ public class LadderClimb : MonoBehaviour, IInteractable
 
     private void ClimbLadder()
     {
+        FadeTransition();
+        Level = Level+1;
+    }
+
+    async void FadeTransition()
+    {
+        await ScreenFadeTransition.Instance.FadeOut();
         dungeonGenerator.GenerateDungeon();
         player.transform.position = Vector3.zero;
-        Level = Level+10;
+        await ScreenFadeTransition.Instance.FadeIn();
+    }
+
+    async void FadeInGameStart()
+    {
+        await ScreenFadeTransition.Instance.FadeIn();
     }
 }

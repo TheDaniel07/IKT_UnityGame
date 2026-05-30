@@ -4,8 +4,13 @@ using UnityEngine.InputSystem;
 public class InteractionDetector : MonoBehaviour
 {
     private IInteractable InteractableInRange = null;
+    public GameObject Aim;
+    public GameObject Melee;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private void Update()
+    {
+        isAimOn();
+    }
 
     public void OnInteract(InputAction.CallbackContext context)
     {
@@ -15,9 +20,6 @@ public class InteractionDetector : MonoBehaviour
         }
 
     }
-     
-
-    // Update is called once per frame
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.TryGetComponent(out IInteractable interactable))
@@ -31,6 +33,19 @@ public class InteractionDetector : MonoBehaviour
         if (collision.TryGetComponent(out IInteractable interactable) && interactable == InteractableInRange)
         {
             InteractableInRange = null;
+        }
+    }
+
+    private void isAimOn()
+    {
+        if (!Aim.activeSelf)
+        {
+            Aim.SetActive(true);
+            Melee.SetActive(false);
+        }
+        else if (Aim.activeSelf)
+        {
+            return;
         }
     }
 }

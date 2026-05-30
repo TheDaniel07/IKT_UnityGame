@@ -8,6 +8,9 @@ public class Movement : MonoBehaviour
     private Rigidbody2D rb;
     public GameObject isGamePaused;
 
+    public Transform Aim;
+    bool isMoving = false;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -32,13 +35,23 @@ public class Movement : MonoBehaviour
         {
             input.x = Input.GetAxisRaw("Horizontal");
             input.y = Input.GetAxisRaw("Vertical");
+
+            if(input.y != 0.0 || input.x != 0.0)
+            {
+                isMoving = true;
+            } else isMoving = false;
+
             input.Normalize();
-            return;
         }
     }
 
     private void FixedUpdate()
     {
         rb.linearVelocity = input * speed;
+        if (isMoving)
+        {
+            Vector3 vector3 = Vector3.left * input.x + Vector3.down * input.y;
+            Aim.rotation = Quaternion.LookRotation(Vector3.forward ,vector3);
+        }
     }
 }

@@ -8,6 +8,10 @@ public class EnemyContact : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            if (PauseController.IsGamePaused)
+            {
+                return;
+            }
             other.GetComponent<PlayerHealth>()?.TakeDamage(damage);
         }
     }

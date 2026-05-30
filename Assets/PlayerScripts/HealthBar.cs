@@ -8,6 +8,11 @@ public class HealthBar : MonoBehaviour
     private Image fill;
     public TMP_Text healthText;
 
+    private void Start()
+    {
+        slider.interactable = false;
+    }
+
     void Awake()
     {
         slider = GetComponent<Slider>();
