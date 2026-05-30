@@ -9,6 +9,7 @@ public class PlayerHealth : MonoBehaviour
 
     public float invincibilityTime = 1f;
     private float lastHitTime = -999f;
+    [SerializeField] private ParticleSystem damageParticles;
 
     void Start()
     {
@@ -23,6 +24,7 @@ public class PlayerHealth : MonoBehaviour
 
         currentHealth -= amount;
         healthBar.SetHealth(currentHealth);
+        SpawnDamageParticles();
 
         if (currentHealth <= 0) Die();
     }
@@ -30,5 +32,12 @@ public class PlayerHealth : MonoBehaviour
     void Die()
     {
         Debug.Log("Player died!");
+    }
+
+    void SpawnDamageParticles()
+    {
+        ParticleSystem instance = Instantiate(damageParticles, transform.position, Quaternion.identity);
+        instance.Play();
+        Destroy(instance.gameObject, instance.main.duration);
     }
 }

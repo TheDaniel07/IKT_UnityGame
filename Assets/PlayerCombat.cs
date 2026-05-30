@@ -4,14 +4,18 @@ public class PlayerCombat : MonoBehaviour
 {
     public float attackDamage = 20f;
     public float attackRange = 0.5f;
+    public float attackCooldown = 0.5f;
     public Transform attackPoint;
     public LayerMask enemyLayers;
 
+    private float nextAttackTime = 0f;
+
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Mouse0) && Time.time >= nextAttackTime)
         {
             Attack();
+            nextAttackTime = Time.time + attackCooldown;
         }
     }
 
