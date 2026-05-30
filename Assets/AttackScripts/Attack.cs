@@ -3,39 +3,30 @@ using UnityEngine.InputSystem;
 
 public class Attack : MonoBehaviour
 {
-    public GameObject Melee;
-    public float attackDamage = 10f;
+    public GameObject Pickaxe, Sword;
     bool isAttacking = false;
     float duration = 0.3f;
     float timer = 0f;
 
     private void Start()
     {
-        Melee.SetActive(false);
+        Pickaxe.SetActive(false);
+        Sword.SetActive(false);
     }
 
     private void Update()
     {
         CheckMeleeTimer();
-        CheckInput();
     }
-    /*
-    public void CheckInput(InputAction.CallbackContext context)
-    {
-        if (context.performed)
-        {
-            OnAttack();
-        }
-    }
-    */
 
-    public void CheckInput()
+    public void CheckInput(InputAction.CallbackContext attack)
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (attack.performed)
         {
             OnAttack();
         }
     }
+
 
     private void OnAttack()
     {
