@@ -77,6 +77,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "DrinkHealPotion",
+                    "type": "Button",
+                    "id": "e032c84c-e836-43b6-ace8-8d1bbf6c7287",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -396,6 +405,17 @@
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
                     "action": "SwapHands",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7fb1a9b1-8d08-4ffe-b66b-8c696b0394ca",
+                    "path": "<Keyboard>/h",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DrinkHealPotion",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

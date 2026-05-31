@@ -8,11 +8,6 @@ public class Ingredient
     public int amount;
 }
 
-public class SmeltingIngredient
-{
-    public string[] itemId = {"coal_smelted", "wood_log", "wood_stick", "wood_plank"};
-}
-
 [System.Serializable]
 public class Recipe
 {
@@ -26,6 +21,16 @@ public static class RecipeDatabase
 {
     public static readonly List<Recipe> CraftingRecipes = new()
     {
+        new Recipe
+        {
+            recipeId = "craft_health_potion",
+            outputItemId = "health_potion",
+            outputAmount = 1,
+            ingredients = new()
+            {
+                new Ingredient { itemId = "gold_smelted", amount = 3 },
+            }
+        },
         new Recipe
         {
             recipeId = "craft_torch",
@@ -273,46 +278,46 @@ public static class RecipeDatabase
         },
         new Recipe
         {
-            recipeId = "craft_titan_sword",
-            outputItemId = "sword_titan",
+            recipeId = "craft_titanium_sword",
+            outputItemId = "sword_titanium",
             outputAmount = 1,
             ingredients = new()
             {
                 new Ingredient { itemId = "wood_stick", amount = 2 },
-                new Ingredient { itemId = "titan_smelted", amount = 2 }
+                new Ingredient { itemId = "titanium_smelted", amount = 2 }
             }
         },
         new Recipe
         {
-            recipeId = "craft_titan_pickaxe",
-            outputItemId = "pickaxe_titan",
+            recipeId = "craft_titanium_pickaxe",
+            outputItemId = "pickaxe_titanium",
             outputAmount = 1,
             ingredients = new()
             {
                 new Ingredient { itemId = "wood_stick", amount = 2 },
-                new Ingredient { itemId = "titan_smelted", amount = 3 }
+                new Ingredient { itemId = "titanium_smelted", amount = 3 }
             }
         },
         new Recipe
         {
-            recipeId = "craft_titan_hammer",
-            outputItemId = "hammer_titan",
+            recipeId = "craft_titanium_hammer",
+            outputItemId = "hammer_titanium",
             outputAmount = 1,
             ingredients = new()
             {
                 new Ingredient { itemId = "wood_stick", amount = 2 },
-                new Ingredient { itemId = "titan_smelted", amount = 3 }
+                new Ingredient { itemId = "titanium_smelted", amount = 3 }
             }
         },
         new Recipe
         {
-            recipeId = "craft_titan_axe",
-            outputItemId = "axe_titan",
+            recipeId = "craft_titanium_axe",
+            outputItemId = "axe_titanium",
             outputAmount = 1,
             ingredients = new()
             {
                 new Ingredient { itemId = "wood_stick", amount = 2 },
-                new Ingredient { itemId = "titan_smelted", amount = 3 }
+                new Ingredient { itemId = "titanium_smelted", amount = 3 }
             }
         },
     };

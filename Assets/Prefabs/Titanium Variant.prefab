@@ -153,6 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   setMaxHealth: 18
+  item: {fileID: 5284910907397385799}
 --- !u!114 &5284910907397385799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,7 +166,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe3d46edf414c834ea31ef7846c81f66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Item
-  itemName: Titanium Ore
-  itemID: 0
+  setItemId: titan_ore
   stackCount: 1
   maxStack: 99

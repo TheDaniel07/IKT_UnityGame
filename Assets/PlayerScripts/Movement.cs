@@ -7,13 +7,14 @@ public class Movement : MonoBehaviour
     private Vector2 input;
     private Rigidbody2D rb;
     public GameObject isGamePaused;
-
+    private Animator animator;
     public Transform Aim;
     bool isMoving = false;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     public void ResumeButtonPressed()
@@ -36,10 +37,20 @@ public class Movement : MonoBehaviour
             input.x = Input.GetAxisRaw("Horizontal");
             input.y = Input.GetAxisRaw("Vertical");
 
-            if(input.y != 0.0 || input.x != 0.0)
+            if (input.y != 0.0 || input.x != 0.0)
             {
+                animator.SetBool("isMoving", true);
                 isMoving = true;
-            } else isMoving = false;
+                animator.SetFloat("InputX", input.x);
+                animator.SetFloat("InputY", input.y);
+            }
+            else
+            {
+                isMoving = false;
+                animator.SetBool("isMoving", false);
+                animator.SetFloat("LastInputX", input.x);
+                animator.SetFloat("LastInpuY", input.y);
+            }
 
             input.Normalize();
         }
