@@ -12,9 +12,12 @@ public class TorchPlacement : MonoBehaviour
     {
         if (context.performed)
         {
-            Vector3 playerPosition = player.transform.position;
-            Instantiate(Torch, playerPosition, Quaternion.identity, parent);
-            inventory.RemoveItem("torch", 1);
+            if (inventory.RemoveItem("torch", 1))
+            {
+                Vector3 playerPosition = player.transform.position;
+                Instantiate(Torch, playerPosition, Quaternion.identity, parent);
+            }
+
         }
     }
 
