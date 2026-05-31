@@ -86,30 +86,228 @@ public static class RecipeDatabase
         },
         new Recipe
         {
-            recipeId = "craft_wood_sword",
-            outputItemId = "sword_wooden",
+            recipeId = "craft_stone_sword",
+            outputItemId = "sword_stone",
             outputAmount = 1,
             ingredients = new()
             {
                 new Ingredient { itemId = "wood_stick", amount = 2 },
-                new Ingredient { itemId = "wood_plank", amount = 3 }
+                new Ingredient { itemId = "stone", amount = 2 }
+            }
+        },
+        new Recipe
+        {
+            recipeId = "craft_stone_pickaxe",
+            outputItemId = "pickaxe_stone",
+            outputAmount = 1,
+            ingredients = new()
+            {
+                new Ingredient { itemId = "wood_stick", amount = 2 },
+                new Ingredient { itemId = "stone", amount = 3 }
+            }
+        },
+        new Recipe
+        {
+            recipeId = "craft_stone_hammer",
+            outputItemId = "hammer_stone",
+            outputAmount = 1,
+            ingredients = new()
+            {
+                new Ingredient { itemId = "wood_stick", amount = 2 },
+                new Ingredient { itemId = "stone", amount = 3 }
+            }
+        },
+        new Recipe
+        {
+            recipeId = "craft_stone_axe",
+            outputItemId = "axe_stone",
+            outputAmount = 1,
+            ingredients = new()
+            {
+                new Ingredient { itemId = "wood_stick", amount = 2 },
+                new Ingredient { itemId = "stone", amount = 3 }
+            }
+        },
+        new Recipe
+        {
+            recipeId = "craft_copper_sword",
+            outputItemId = "sword_copper",
+            outputAmount = 1,
+            ingredients = new()
+            {
+                new Ingredient { itemId = "wood_stick", amount = 2 },
+                new Ingredient { itemId = "copper_smelted", amount = 2 }
+            }
+        },
+        new Recipe
+        {
+            recipeId = "craft_copper_pickaxe",
+            outputItemId = "pickaxe_copper",
+            outputAmount = 1,
+            ingredients = new()
+            {
+                new Ingredient { itemId = "wood_stick", amount = 2 },
+                new Ingredient { itemId = "copper_smelted", amount = 3 }
+            }
+        },
+        new Recipe
+        {
+            recipeId = "craft_copper_hammer",
+            outputItemId = "hammer_copper",
+            outputAmount = 1,
+            ingredients = new()
+            {
+                new Ingredient { itemId = "wood_stick", amount = 2 },
+                new Ingredient { itemId = "copper_smelted", amount = 3 }
+            }
+        },
+        new Recipe
+        {
+            recipeId = "craft_copper_axe",
+            outputItemId = "axe_copper",
+            outputAmount = 1,
+            ingredients = new()
+            {
+                new Ingredient { itemId = "wood_stick", amount = 2 },
+                new Ingredient { itemId = "copper_smelted", amount = 3 }
+            }
+        },
+        new Recipe
+        {
+            recipeId = "craft_iron_sword",
+            outputItemId = "sword_iron",
+            outputAmount = 1,
+            ingredients = new()
+            {
+                new Ingredient { itemId = "wood_stick", amount = 2 },
+                new Ingredient { itemId = "iron_smelted", amount = 2 }
+            }
+        },
+        new Recipe
+        {
+            recipeId = "craft_iron_pickaxe",
+            outputItemId = "pickaxe_iron",
+            outputAmount = 1,
+            ingredients = new()
+            {
+                new Ingredient { itemId = "wood_stick", amount = 2 },
+                new Ingredient { itemId = "iron_smelted", amount = 3 }
+            }
+        },
+        new Recipe
+        {
+            recipeId = "craft_iron_hammer",
+            outputItemId = "hammer_iron",
+            outputAmount = 1,
+            ingredients = new()
+            {
+                new Ingredient { itemId = "wood_stick", amount = 2 },
+                new Ingredient { itemId = "iron_smelted", amount = 3 }
+            }
+        },
+        new Recipe
+        {
+            recipeId = "craft_iron_axe",
+            outputItemId = "axe_iron",
+            outputAmount = 1,
+            ingredients = new()
+            {
+                new Ingredient { itemId = "wood_stick", amount = 2 },
+                new Ingredient { itemId = "iron_smelted", amount = 3 }
+            }
+        },
+        new Recipe
+        {
+            recipeId = "craft_diamond_sword",
+            outputItemId = "sword_diamond",
+            outputAmount = 1,
+            ingredients = new()
+            {
+                new Ingredient { itemId = "wood_stick", amount = 2 },
+                new Ingredient { itemId = "diamond_smelted", amount = 2 }
+            }
+        },
+        new Recipe
+        {
+            recipeId = "craft_diamond_pickaxe",
+            outputItemId = "pickaxe_diamond",
+            outputAmount = 1,
+            ingredients = new()
+            {
+                new Ingredient { itemId = "wood_stick", amount = 2 },
+                new Ingredient { itemId = "diamond_smelted", amount = 3 }
+            }
+        },
+        new Recipe
+        {
+            recipeId = "craft_diamond_hammer",
+            outputItemId = "hammer_diamond",
+            outputAmount = 1,
+            ingredients = new()
+            {
+                new Ingredient { itemId = "wood_stick", amount = 2 },
+                new Ingredient { itemId = "diamond_smelted", amount = 3 }
+            }
+        },
+        new Recipe
+        {
+            recipeId = "craft_diamond_axe",
+            outputItemId = "axe_diamond",
+            outputAmount = 1,
+            ingredients = new()
+            {
+                new Ingredient { itemId = "wood_stick", amount = 2 },
+                new Ingredient { itemId = "diamond_smelted", amount = 3 }
+            }
+        },
+        new Recipe
+        {
+            recipeId = "craft_titan_sword",
+            outputItemId = "sword_titan",
+            outputAmount = 1,
+            ingredients = new()
+            {
+                new Ingredient { itemId = "wood_stick", amount = 2 },
+                new Ingredient { itemId = "titan_smelted", amount = 2 }
+            }
+        },
+        new Recipe
+        {
+            recipeId = "craft_titan_pickaxe",
+            outputItemId = "pickaxe_titan",
+            outputAmount = 1,
+            ingredients = new()
+            {
+                new Ingredient { itemId = "wood_stick", amount = 2 },
+                new Ingredient { itemId = "titan_smelted", amount = 3 }
+            }
+        },
+        new Recipe
+        {
+            recipeId = "craft_titan_hammer",
+            outputItemId = "hammer_titan",
+            outputAmount = 1,
+            ingredients = new()
+            {
+                new Ingredient { itemId = "wood_stick", amount = 2 },
+                new Ingredient { itemId = "titan_smelted", amount = 3 }
+            }
+        },
+        new Recipe
+        {
+            recipeId = "craft_titan_axe",
+            outputItemId = "axe_titan",
+            outputAmount = 1,
+            ingredients = new()
+            {
+                new Ingredient { itemId = "wood_stick", amount = 2 },
+                new Ingredient { itemId = "titan_smelted", amount = 3 }
             }
         },
     };
 
     public static readonly List<Recipe> SmeltingRecipes = new()
     {
-        new Recipe
-        {
-            recipeId = "smelt_coal",
-            outputItemId = "coal_smelted",
-            outputAmount = 1,
-            ingredients = new()
-            {
-                new Ingredient { itemId = "coal_ore", amount = 1 },
-                new Ingredient { itemId = "coal_smelted", amount = 1 }
-            }
-        },
         new Recipe
         {
             recipeId = "smelt_copper",

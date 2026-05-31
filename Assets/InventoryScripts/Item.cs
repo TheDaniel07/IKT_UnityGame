@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class Item : MonoBehaviour
 {
     public string itemName;
-    public int itemID;
+    public string itemID;
     public int stackCount = 1;
     public int maxStack = 99;
 
