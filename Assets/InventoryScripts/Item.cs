@@ -4,14 +4,18 @@ using UnityEngine.UI;
 
 public class Item : MonoBehaviour
 {
-    public string itemName;
-    public string itemID;
+    public string setItemId;
+    public string itemId { get; private set; }
     public int stackCount = 1;
     public int maxStack = 99;
 
     private Image _image;
     private SpriteRenderer _spriteRenderer;
 
+    private void Start()
+    {
+        itemId = setItemId;
+    }
     private void Awake()
     {
         _image = GetComponent<Image>();
@@ -75,4 +79,6 @@ public class Item : MonoBehaviour
         stackCount -= removed;
         return removed;
     }
+
+    
 }

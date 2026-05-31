@@ -1,9 +1,13 @@
+using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Mineable : MonoBehaviour
 {
     public float setMaxHealth;
     float health, maxHealth;
+    [SerializeField] Item item;
+    
     void Start()
     {
         maxHealth = setMaxHealth;
@@ -14,8 +18,9 @@ public class Mineable : MonoBehaviour
         health -= damage;
         if(health < 1)
         {
+            InventoryManager.Instance.AddItem(item.itemId, 1);
             Destroy(gameObject);
-            Debug.Log("Destroyed");
+            Debug.Log($"[Mineable] Destroyed and added {item.itemId} to inventory.");
         }
     }
 }

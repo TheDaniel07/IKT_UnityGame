@@ -8,11 +8,6 @@ public class Ingredient
     public int amount;
 }
 
-public class SmeltingIngredient
-{
-    public string[] itemId = {"coal_smelted", "wood_log", "wood_stick", "wood_plank"};
-}
-
 [System.Serializable]
 public class Recipe
 {
