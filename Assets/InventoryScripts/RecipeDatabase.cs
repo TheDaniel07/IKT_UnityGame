@@ -23,6 +23,16 @@ public static class RecipeDatabase
     {
         new Recipe
         {
+            recipeId = "craft_health_potion",
+            outputItemId = "health_potion",
+            outputAmount = 1,
+            ingredients = new()
+            {
+                new Ingredient { itemId = "gold_smelted", amount = 3 },
+            }
+        },
+        new Recipe
+        {
             recipeId = "craft_torch",
             outputItemId = "torch",
             outputAmount = 4,
