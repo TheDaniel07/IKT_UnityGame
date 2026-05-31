@@ -636,6 +636,11 @@ footer .footer-links a:hover::after {
     max-width: 260px;
     color: rgba(232,228,216,0.5) !important;
   }
+  a {
+    color: inherit;
+    text-decoration: inherit;
+
+  }
 
 
 

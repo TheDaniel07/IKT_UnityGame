@@ -3,19 +3,37 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Wiki – Főoldal</title>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="main.css">
+<title>Csákányok – Goldmound Wiki</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../main.css">
+<style>
+  .content-wrapper {
+    padding: 40px 48px;
+    max-width: 1100px;
+  }
+
+  .page-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.9rem;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 0.12em;
+    margin-bottom: 8px;
+  }
+
+  .page-subtitle {
+    font-size: 1rem;
+    color: var(--text-dim);
+    margin-bottom: 32px;
+    line-height: 1.6;
+  }
+</style>
 </head>
 <body>
 
 <header>
-  <div class="header-inner">
+    <div class="header-inner">
     <h1><a href="#" style="text-decoration: none; color: var(--accent);">&#9670; Goldmound Wiki</a></h1>
-    <div class="divider"></div>
-    <div class="header-search">
-      <span class="search-icon">⌕</span>
-      <input type="text" placeholder="Keresés a wikiben…">
     </div>
   </div>
 </header>
@@ -116,51 +134,88 @@
   </div>
 </nav>
 
-  <main>
-    <div class="main-glow"></div>
-    <div class="main-bg-text"><span>WIKI</span></div>
-    <div class="corner-accent"></div>
-    <div class="corner-accent-bl"></div>
-    <div class="main-content-overlay">
-      <div class="hero-card">
+  <main style="overflow-y: auto; align-items: flex-start;">
+    <div class="content-wrapper">
 
-        <div class="hc-intro">
-          <p>Ez a wiki bemutatja a világ szabályait, szereplőit és teljes történetét. Böngéssz a kategóriák között, vagy keress rá konkrét tartalomra a fenti keresőben — minden ami kell, egy helyen megtalálható.</p>
-        </div>
+      <div class="page-title">A Csákányok</div>
+      <div class="page-subtitle">Az összes csákány a Goldmound világában</div>
 
-        <div class="hc-buttons">
-          <div class="hc-buttons-inner">
-            <div class="hc-buttons-label" style="font-size: 120%;">Különböző kategóriák a játékon belül</div>
-            <div class="hc-btn-row">
-              <a href="" class="page-btn"><div class="pb-img">itt kép lesz</div><div class="pb-name">A Ház</div></a> <!--Teki dolgozz-->
-              <a href="../Weboldal/alweboldalak/csakanyokweboldalak/csakanyokmain.html" class="page-btn"><div class="pb-img">itt kép lesz</div><div class="pb-name">Csákányok</div></a>
-              <a href="../Weboldal/alweboldalak/kardokweboldalak/kardmain.html" class="page-btn"><div class="pb-img">itt kép lesz</div><div class="pb-name">Kardok</div></a>
-              <a href="" class="page-btn"><div class="pb-img">itt kép lesz</div><div class="pb-name">Bájitalok</div></a> <!--Teki dolgozz-->
-              <a href="" class="page-btn"><div class="pb-img">itt kép lesz</div><div class="pb-name">Szörnyek</div></a> <!--Teki dolgozz-->
-            </div>
-            <div class="hc-btn-row">
-              <a href="../Weboldal/alweboldalak/Banya.html" class="page-btn"><div class="pb-img">itt kép lesz</div><div class="pb-name">A Bánya</div></a>
-              <a href="" class="page-btn"><div class="pb-img">itt kép lesz</div><div class="pb-name">Kovácsolás</div></a> <!--Teki dolgozz-->
-              <a href="" class="page-btn"><div class="pb-img">itt kép lesz</div><div class="pb-name">Mechanikák</div></a> <!--Teki dolgozz-->
-              <a href="../Weboldal/alweboldalak/ercekweboldalak/ercekmain.html" class="page-btn"><div class="pb-img">itt kép lesz</div><div class="pb-name">Ércek</div></a>
-              <a href="" class="page-btn"><div class="pb-img">itt kép lesz</div><div class="pb-name">Karakter</div></a> <!--Teki dolgozz-->
-            </div>
-          </div>
-        </div>
+      <div class="wiki-table-wrap">
+        <table class="wiki-table">
+          <thead>
+            <tr>
+              <th>Csákány neve</th>
+              <th class="center">Megjelenés</th>
+              <th>Mi kell hozzá:</th>
+              <th>Tulajdonság</th>
+              <th>Leírás</th>
+            </tr>
+          </thead>
+          <tbody>
 
+            <tr>
+              <td class="td-name">Facsákány</td>
+              <td class="td-appearance"><img src="../../../sprites/woodenpickaxe.png" alt=""></td>
+              <td>5 bot</td>
+              <td class="td-trait trait-none"> - </td>
+              <td class="td-desc">A játék leggyengébb csákánya ezzel kezdesz</td>
+            </tr>
+            
+            <tr>
+              <td class="td-name">Kőcsákány</td>
+              <td class="td-appearance"><img src="../../../sprites/stonepickaxe.png" alt=""></td>
+              <td>3 kő és 2 bot</td>
+              <td class="td-trait trait-none"> - </td>
+              <td class="td-desc">Egy fokkal erősebb mint egy facsákány, de nem hosszú távú használatra van tervezve</td>
+            </tr>
+
+            <tr>
+              <td class="td-name">Rézcsákány</td>
+              <td class="td-appearance"><img src="../../../sprites/copperpickaxe.png" alt=""></div></td>
+              <td>3 olvasztott réz és 2 bot</td>
+              <td class="td-trait trait-none"> - </td>
+              <td class="td-desc">Egy közepesen jó csákány amellyel már tudunk sokáig haladni</td>
+            </tr>
+            
+            <tr>
+              <td class="td-name">Vascsákány</td>
+              <td class="td-appearance"><img src="../../../sprites/csakany.png" alt=""></td>
+              <td>3 olvasztott vas és 2 bot</td>
+              <td class="td-trait"> - </td>
+              <td class="td-desc">Egy kifejezetten jó csákány</td>
+            </tr>
+
+            <tr>
+              <td class="td-name">Gyémántcsákány</td>
+              <td class="td-appearance"><img src="../../../sprites/diamondpickaxe.png" alt=""></td>
+              <td>3 gyémánt és 2 bot</td>
+              <td class="td-trait">Nagyon durabilis</td>
+              <td class="td-desc">A játék legdurabilisebb csákánya csak a mélyebbi szinteken található meg</td>
+            </tr>
+
+            <tr>
+              <td class="td-name">Titáncsákány</td>
+              <td class="td-appearance"><img src="../../../sprites/titanpickaxe.png" alt=""></td>
+              <td>3 olvasztott titán és 2 bot</td>
+              <td class="td-trait">Mindent egy ütéssel kiszed</td>
+              <td class="td-desc">A játék legerősebb csákánya, ez által a legnehezebben is megszerezhető</td>
+            </tr>
+
+          </tbody>
+        </table>
       </div>
+
     </div>
   </main>
 
   <footer>
-    <div class="footer-brand"><a href="#" style="text-decoration: none; color: var(--accent);">Goldmound Wiki</a></div>
+    <div class="footer-brand"><a href="index.html" style="text-decoration:none;color:var(--accent);">Goldmound Wiki</a></div>
     <div class="footer-links">
       <a href="#">Kapcsolat</a>
       <a href="#">Készítők</a>
     </div>
     <div class="footer-copy">© 2026 Goldmound Wiki – Minden jog fenntartva</div>
   </footer>
-
 
 </div>
 
@@ -171,15 +226,10 @@
       var targetId = this.getAttribute('data-target');
       var subList = document.getElementById(targetId);
       var parentLi = this.closest('.nav-dropdown');
-
       var isOpen = parentLi.classList.contains('open');
 
-      document.querySelectorAll('.nav-dropdown').forEach(function(d) {
-        d.classList.remove('open');
-      });
-      document.querySelectorAll('.nav-sub-inner').forEach(function(s) {
-        s.classList.remove('open');
-      });
+      document.querySelectorAll('.nav-dropdown').forEach(function(d) { d.classList.remove('open'); });
+      document.querySelectorAll('.nav-sub-inner').forEach(function(s) { s.classList.remove('open'); });
 
       if (!isOpen) {
         parentLi.classList.add('open');
@@ -188,21 +238,14 @@
     });
   });
 
-var navToggle = document.getElementById('nav-toggle');
-var mainNav = document.getElementById('main-nav');
-
-if (navToggle) {
-  navToggle.addEventListener('click', function() {
-    mainNav.classList.toggle('nav-open');
-  });
-}
-
-
-window.addEventListener('resize', function() {
-  if (window.innerWidth > 768) {
-    mainNav.classList.remove('nav-open');
+  var navToggle = document.getElementById('nav-toggle');
+  var mainNav = document.getElementById('main-nav');
+  if (navToggle) {
+    navToggle.addEventListener('click', function() { mainNav.classList.toggle('nav-open'); });
   }
-});
+  window.addEventListener('resize', function() {
+    if (window.innerWidth > 768) mainNav.classList.remove('nav-open');
+  });
 </script>
 
 </body>
