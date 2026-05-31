@@ -4,6 +4,7 @@ public class EnemyHealth : MonoBehaviour
 {
     [Header("Health Settings")]
     public float maxHealth = 50f;
+    public int knockbackStrength = -100;
     private float currentHealth;
     [SerializeField] private ParticleSystem damageParticles;
     private ParticleSystem damageParticlesInstance;
@@ -41,6 +42,6 @@ public class EnemyHealth : MonoBehaviour
 
     private void KnockBack()
     {
-        AIChase.speed = -400;
+        AIChase.speed = knockbackStrength;
     }
 }

@@ -3882,7 +3882,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 594309489}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 1
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
@@ -40574,6 +40574,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1894965176}
     m_Modifications:
+    - target: {fileID: 2882118663625961534, guid: 07915543893e7ff4fb20dfd553b1b392, type: 3}
+      propertyPath: knockbackStrength
+      value: -100
+      objectReference: {fileID: 0}
     - target: {fileID: 3673697675810599840, guid: 07915543893e7ff4fb20dfd553b1b392, type: 3}
       propertyPath: m_Name
       value: Enemy

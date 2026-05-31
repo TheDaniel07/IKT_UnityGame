@@ -22,10 +22,21 @@ public class Weapon : MonoBehaviour
 
         SpriteRenderer sr = GetComponent<SpriteRenderer>();
 
+        if (itemId == "hammer_wood") { damage = 1; if (sr != null) sr.sprite = ItemIconDatabase.Instance.GetIcon(itemId); }
+        //stone
+        if (itemId == "hammer_stone") { damage = 2; if (sr != null) sr.sprite = ItemIconDatabase.Instance.GetIcon(itemId); }
         if (itemId == "pickaxe_stone") { damage = 3; if (sr != null) sr.sprite = ItemIconDatabase.Instance.GetIcon(itemId); }
+        //copper
+        if (itemId == "hammer_copper") { damage = 4; if (sr != null) sr.sprite = ItemIconDatabase.Instance.GetIcon(itemId); }
         if (itemId == "pickaxe_copper") { damage = 5; if (sr != null) sr.sprite = ItemIconDatabase.Instance.GetIcon(itemId); }
+        //iron
+        if (itemId == "hammer_iron") { damage = 6; if (sr != null) sr.sprite = ItemIconDatabase.Instance.GetIcon(itemId); }
         if (itemId == "pickaxe_iron") { damage = 8; if (sr != null) sr.sprite = ItemIconDatabase.Instance.GetIcon(itemId); }
-        if (itemId == "pickaxe_diamond") { damage = 10; if (sr != null) sr.sprite = ItemIconDatabase.Instance.GetIcon(itemId); }
+        //diamond
+        if (itemId == "hammer_diamond") { damage = 10; if (sr != null) sr.sprite = ItemIconDatabase.Instance.GetIcon(itemId); }
+        if (itemId == "pickaxe_diamond") { damage = 14; if (sr != null) sr.sprite = ItemIconDatabase.Instance.GetIcon(itemId); }
+        //titanium
+        if (itemId == "hammer_titanium") { damage = 20; if (sr != null) sr.sprite = ItemIconDatabase.Instance.GetIcon(itemId); }
         if (itemId == "pickaxe_titanium") { damage = 20; if (sr != null) sr.sprite = ItemIconDatabase.Instance.GetIcon(itemId); }
     }
 
