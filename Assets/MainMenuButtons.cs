@@ -26,7 +26,7 @@ public class MainMenu : MonoBehaviour
 
     public void PlayButton()
     {
-        SceneManager.LoadScene("EnemyAIScene");
+        SceneManager.LoadScene("Dungeon");
     }
 
     public void SettingsButton()

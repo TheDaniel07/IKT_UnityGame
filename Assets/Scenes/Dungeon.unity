@@ -3764,7 +3764,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 598213730}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
-        m_MethodName: MainMenuButton
+        m_MethodName: SaveAndExit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -38063,6 +38063,7 @@ MonoBehaviour:
   Torch: {fileID: 3153040851260000344, guid: f2ab6a76d1687614d9538348345674bd, type: 3}
   parent: {fileID: 207028407}
   player: {fileID: 1951485340}
+  inventory: {fileID: 0}
 --- !u!114 &1951485345
 MonoBehaviour:
   m_ObjectHideFlags: 0
