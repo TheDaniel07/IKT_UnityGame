@@ -10,11 +10,13 @@ public class Movement : MonoBehaviour
     private Animator animator;
     public Transform Aim;
     bool isMoving = false;
+    private PlayerHealth playerhealth;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        playerhealth = GetComponent<PlayerHealth>();
     }
 
     public void ResumeButtonPressed()
@@ -27,13 +29,26 @@ public class Movement : MonoBehaviour
     {
         if (PauseController.IsGamePaused)
         {
-            input = Vector2.zero;
+            speed = 0f;
             isGamePaused.SetActive(true);
             return;
         }
 
-        if (!PauseController.IsGamePaused)
+        if (playerhealth.currentHealth <= 0)
         {
+            speed = 0f;
+            return;
+        }
+
+        if (playerhealth.currentHealth > 0) 
+        {
+            speed = 8f;
+        }
+
+        if (!PauseController.IsGamePaused && playerhealth.currentHealth > 0)
+        {
+            speed = 8f;
+
             input.x = Input.GetAxisRaw("Horizontal");
             input.y = Input.GetAxisRaw("Vertical");
 

@@ -4,6 +4,7 @@ public class PlayerHealth : MonoBehaviour
 {
     public int maxHealth = 100;
     public int currentHealth { get; private set; }
+    public GameObject youdiedPanel;
 
     public HealthBar healthBar;
 
@@ -14,6 +15,7 @@ public class PlayerHealth : MonoBehaviour
     {
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
+        youdiedPanel.SetActive(false);
     }
 
     public void TakeDamage(int amount)
@@ -39,5 +41,7 @@ public class PlayerHealth : MonoBehaviour
     void Die()
     {
         Debug.Log("Player died!");
+        youdiedPanel.SetActive(true);
+        Time.timeScale = 0f;
     }
 }
