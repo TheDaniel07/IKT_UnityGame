@@ -11,8 +11,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenuScene.unity
     guid: 78d3ef2f1cd1ca74bba72ccdee7f1d7f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/EnemyAIScene.unity
     guid: c8148deb694f93c43807edbbc86975ea
+  - enabled: 1
+    path: Assets/Scenes/Dungeon.unity
+    guid: c14e7c4715b828b4b882bfad4af5b556
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
