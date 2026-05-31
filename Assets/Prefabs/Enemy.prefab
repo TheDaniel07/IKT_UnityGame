@@ -215,6 +215,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   maxHealth: 100
   damageParticles: {fileID: 3601348578448873257}
+  AIChase: {fileID: 6035368267065856772}
 --- !u!114 &1447909265925685697
 MonoBehaviour:
   m_ObjectHideFlags: 0

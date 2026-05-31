@@ -7,6 +7,7 @@ public class EnemyHealth : MonoBehaviour
     private float currentHealth;
     [SerializeField] private ParticleSystem damageParticles;
     private ParticleSystem damageParticlesInstance;
+    [SerializeField] private AIChase AIChase;
 
     void Start()
     {
@@ -19,6 +20,7 @@ public class EnemyHealth : MonoBehaviour
         Debug.Log($"{gameObject.name} took {damage} damage. HP: {currentHealth}/{maxHealth}");
 
         SpawnDamageParticles();
+        KnockBack();
 
         if (currentHealth <= 0f)
             Die();
@@ -35,5 +37,10 @@ public class EnemyHealth : MonoBehaviour
         ParticleSystem instance = Instantiate(damageParticles, transform.position, Quaternion.identity);
         instance.Play();
         Destroy(instance.gameObject, instance.main.duration);
+    }
+
+    private void KnockBack()
+    {
+        AIChase.speed = -400;
     }
 }
