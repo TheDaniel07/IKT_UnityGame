@@ -38424,10 +38424,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1894965176}
     m_Modifications:
-    - target: {fileID: 272748865017308395, guid: 07915543893e7ff4fb20dfd553b1b392, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
+    - target: {fileID: 2882118663625961534, guid: 07915543893e7ff4fb20dfd553b1b392, type: 3}
+      propertyPath: damageParticles
+      value: 
+      objectReference: {fileID: 8177820479671237334}
     - target: {fileID: 3673697675810599840, guid: 07915543893e7ff4fb20dfd553b1b392, type: 3}
       propertyPath: m_Name
       value: Enemy
@@ -39005,6 +39005,11 @@ PrefabInstance:
 --- !u!4 &8177820479671237324 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6930197979460862721, guid: 07915543893e7ff4fb20dfd553b1b392, type: 3}
+  m_PrefabInstance: {fileID: 1213272437584477392}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &8177820479671237334 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 57964165648966858, guid: 07915543893e7ff4fb20dfd553b1b392, type: 3}
   m_PrefabInstance: {fileID: 1213272437584477392}
   m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
