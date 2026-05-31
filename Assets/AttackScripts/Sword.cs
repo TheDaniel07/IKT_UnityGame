@@ -20,11 +20,11 @@ public class PlayerCombat : MonoBehaviour
 
         SpriteRenderer sr = GetComponent<SpriteRenderer>();
 
-        if (itemId == "sword_stone") { attackDamage = 3; if (sr != null) sr.sprite = ItemIconDatabase.Instance.GetIcon(itemId); }
-        if (itemId == "sword_copper") { attackDamage = 5; if (sr != null) sr.sprite = ItemIconDatabase.Instance.GetIcon(itemId); }
-        if (itemId == "sword_iron") { attackDamage = 8; if (sr != null) sr.sprite = ItemIconDatabase.Instance.GetIcon(itemId); }
-        if (itemId == "sword_diamond") { attackDamage = 10; if (sr != null) sr.sprite = ItemIconDatabase.Instance.GetIcon(itemId); }
-        if (itemId == "sword_titanium") { attackDamage = 20; if (sr != null) sr.sprite = ItemIconDatabase.Instance.GetIcon(itemId); }
+        if (itemId == "sword_stone") { attackDamage = 40f; if (sr != null) sr.sprite = ItemIconDatabase.Instance.GetIcon(itemId); }
+        if (itemId == "sword_copper") { attackDamage = 60f; if (sr != null) sr.sprite = ItemIconDatabase.Instance.GetIcon(itemId); }
+        if (itemId == "sword_iron") { attackDamage = 70f; if (sr != null) sr.sprite = ItemIconDatabase.Instance.GetIcon(itemId); }
+        if (itemId == "sword_diamond") { attackDamage = 80f; if (sr != null) sr.sprite = ItemIconDatabase.Instance.GetIcon(itemId); }
+        if (itemId == "sword_titanium") { attackDamage = 100f; if (sr != null) sr.sprite = ItemIconDatabase.Instance.GetIcon(itemId); }
     }
 
     private void FixedUpdate()
