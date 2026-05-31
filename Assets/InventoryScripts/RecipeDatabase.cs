@@ -28,6 +28,17 @@ public static class RecipeDatabase
     {
         new Recipe
         {
+            recipeId = "craft_torch",
+            outputItemId = "torch",
+            outputAmount = 4,
+            ingredients = new() 
+            {
+                new Ingredient { itemId = "wood_stick", amount = 1 },
+                new Ingredient { itemId = "coal_smelted", amount = 1 }
+            }
+        },
+        new Recipe
+        {
             recipeId = "craft_wood_plank",
             outputItemId = "wood_plank",
             outputAmount = 4,

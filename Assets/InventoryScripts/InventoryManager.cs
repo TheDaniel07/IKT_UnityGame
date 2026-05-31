@@ -43,6 +43,7 @@ public class InventoryManager : MonoBehaviour
             new InventoryItemData { itemId = "wood_stick",        displayName = "Wood Stick",        quantity = 0, category = "Wood" },
             // Material
             new InventoryItemData { itemId = "stone",             displayName = "Stone",             quantity = 0, category = "Material" },
+            new InventoryItemData { itemId = "torch",             displayName = "Torch",             quantity = 0, category = "Material" },
             // Pickaxes
             new InventoryItemData { itemId = "pickaxe_wooden",    displayName = "Wooden Pickaxe",    quantity = 0, category = "Pickaxe" },
             new InventoryItemData { itemId = "pickaxe_stone",     displayName = "Stone Pickaxe",     quantity = 0, category = "Pickaxe" },
