@@ -6,6 +6,8 @@ public class MainMenu : MonoBehaviour
     public GameObject playButton;
     public GameObject settingsPanel;
     public GameObject exitgameButton;
+    public GameObject controlsPanel;
+    public GameObject controlsPanel2;
 
     void Update()
     {
@@ -22,14 +24,30 @@ public class MainMenu : MonoBehaviour
             settingsPanel.SetActive(false);
             return;
         }
+
+        if (controlsPanel.activeSelf && !controlsPanel2.activeSelf)
+        {
+            controlsPanel.SetActive(false);
+            return;
+        }
+
+        if (controlsPanel2.activeSelf && controlsPanel.activeSelf)
+        {
+            controlsPanel2.SetActive(false);
+            controlsPanel.SetActive(true);
+            return;
+        }
+
+        
     }
 
     public void PlayButton()
     {
-        SceneManager.LoadScene("EnemyAIScene");
+        SceneManager.LoadScene("Dungeon");
+        return;
     }
 
-    public void SettingsButton()
+    public void SettingsBackButton()
     {
         if (settingsPanel.activeSelf)
         {
@@ -39,6 +57,35 @@ public class MainMenu : MonoBehaviour
         {
             settingsPanel.SetActive(true);
         }
+    }
+
+    public void ControlsButton()
+    {
+        controlsPanel.SetActive(true);
+        controlsPanel2.SetActive(false);
+        return;
+    }
+
+    public void ControlsBackButton()
+    {
+        if (controlsPanel.activeSelf && controlsPanel2.activeSelf)
+        {
+            controlsPanel.SetActive(true);
+            controlsPanel2.SetActive(false);
+            return;
+        }
+
+        if (controlsPanel.activeSelf)
+        {
+            controlsPanel.SetActive(false);
+            return;
+        }
+    }
+
+    public void ControlsNextButton()
+    {
+        controlsPanel2.SetActive(true);
+        return;
     }
 
     public void ExitGameButton()

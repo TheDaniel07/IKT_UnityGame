@@ -8,6 +8,7 @@ public class OreGenerator : MonoBehaviour
     public GameObject[] Ores;
     public Transform parent;
     [SerializeField] private LadderClimb ladderClimb;
+    public HashSet<Vector3> orePositions {  get; private set; } = new HashSet<Vector3>();
     
     public void GenerateOres(HashSet<Vector2Int> positions)
     {
@@ -16,6 +17,8 @@ public class OreGenerator : MonoBehaviour
             Vector2Int randomPos = positions.ElementAt(Random.Range(0, positions.Count));
             Vector3 pos = new(randomPos.x, randomPos.y);
             Vector3 offset = new(0.5f, 0.5f);
+            Vector3 orePos = pos + offset;
+            orePositions.Add(orePos);
             /* 0 - Stone
              * 1 - Coal
              * 2 - Copper

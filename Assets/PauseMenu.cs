@@ -1,5 +1,6 @@
 using System.ComponentModel;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -58,7 +59,12 @@ public class PauseMenu : MonoBehaviour
         settingsPanel.SetActive(false);
     }
 
-    void CloseSettings()
+    public void SaveAndExit()
+    {
+        SceneManager.LoadScene("MainMenuScene");
+    }
+
+    public void CloseSettings()
     {
         settingsPanel.SetActive(false);
         pauseMenu.SetActive(true);
