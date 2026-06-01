@@ -115,6 +115,7 @@ MonoBehaviour:
   speed: 3
   distanceBetween: 8
   PauseMenu: {fileID: 0}
+  playerPos: {x: 0, y: 0}
 --- !u!114 &3818969942778052969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -301,7 +302,7 @@ GameObject:
   - component: {fileID: 7869624135557584546}
   - component: {fileID: 3601348578448873257}
   - component: {fileID: 6019551426306889716}
-  m_Layer: 6
+  m_Layer: 5
   m_Name: EnemyBlood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5091,8 +5092,8 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -599050451
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_RenderMode: 0
