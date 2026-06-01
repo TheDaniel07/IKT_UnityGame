@@ -149,11 +149,24 @@
       <div class="page-subtitle">Az összes bányászható érc a Goldmound világában — ritkasággal, árral és leírással.</div>
 
       <div class="wiki-table-wrap">
-        <tr>
+        <table class="wiki-table">
+          <thead>
+            <tr>
+              <th>Érc neve</th>
+              <th class="center">Megjelenés</th>
+              <th>Ritkaság</th>
+              <th>Ár</th>
+              <th>Tulajdonság</th>
+              <th>Leírás</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr>
               <td class="td-name">Kő</td>
               <td class="td-appearance"><img src="../../../sprites/ko.png" alt=""></td>
               <td>szint amelyeken megtalálható: 1. szinttől </td>
-              <td class="td-trait trait-none">—</td>
+              <td class="td-trait trait-none">-</td>
               <td class="td-desc">egyszerű kő</td>
             </tr>
             
@@ -161,7 +174,7 @@
               <td class="td-name"><a href="../ercekweboldalak/szenerc.html">Szén</a></td>
               <td class="td-appearance"><img src="../../../sprites/coal.png" alt=""></td>
               <td>szint amelyen megtalálható: 1. szinttől </td>
-              <td class="td-trait trait-none"></td>
+              <td class="td-trait trait-none">-</td>
               <td class="td-desc"></td>
             </tr>
 
@@ -169,7 +182,7 @@
               <td class="td-name"><a href="../ercekweboldalak/rezerc.html">Réz</a></td>
               <td class="td-appearance"><img src="../../../sprites/smeltedcopper.png" alt=""></td>
               <td>szint amelyeken megtalálható: 21. szinttől </td>
-              <td class="td-trait trait-none"></td>
+              <td class="td-trait trait-none">-</td>
               <td class="td-desc"></td>
             </tr>
             
@@ -177,15 +190,15 @@
               <td class="td-name"><a href="../ercekweboldalak/">Arany</a></td>
               <td class="td-appearance"><img src="../../../sprites/smeltedgold.png" alt=""></td>
               <td>szint amelyeken megtalálható: 41. szinttől </td>
-              <td class="td-trait">-</td>
-              <td class="td-desc">Ebből csinálható a gyógyító bájital</td>
+              <td class="td-trait">Értéknövelő</td>
+              <td class="td-desc"></td>
             </tr>
             
             <tr>
               <td class="td-name"><a href="../ercekweboldalak/">Vas</a></td>
               <td class="td-appearance"><img src="../../../sprites/smeltediron.png" alt=""></td>
               <td>szint amelyeken megtalálható: 41. szinttől </td>
-              <td class="td-trait trait-none">—</td>
+              <td class="td-trait trait-none">-</td>
               <td class="td-desc"></td>
             </tr>
 
@@ -210,16 +223,19 @@
               <td class="td-name"><a href="../ercekweboldalak/">Titán</a></td>
               <td class="td-appearance"><img src="../../../sprites/smeltedtitan.png" alt=""></td>
               <td>szint amelyeken megtalálható: 100. szinttől</td>
-              <td class="td-trait"></td>
+              <td class="td-trait">-</td>
               <td class="td-desc"></td>
             </tr>
             <tr>
-              <td class="td-name"><a href="../ercekweboldalak/">Uránium</a></td>
+              <td class="td-name"><a href="../ercekweboldalak/"><span style="color: #ff0000;">Uránium</span></a></td>
               <td class="td-appearance"><img src="../../../sprites/smelteduranium.png" alt=""></td>
               <td>szint amelyeken megtalálható: 100. szinttől</td>
               <td class="td-trait">Törhetetlen</td>
               <td class="td-desc"></td>
             </tr>
+
+          </tbody>
+        </table>
       </div>
 
     </div>
@@ -228,7 +244,7 @@
   <footer>
     <div class="footer-brand"><a href="../../main.html" style="text-decoration:none;color:var(--accent);">Goldmound Wiki</a></div>
     <div class="footer-links">
-      <a href="../Készítők.html">Készítők</a>
+      <a href="../../Készítők.html">Készítők</a>
     </div>
     <div class="footer-copy">© 2026 Goldmound Wiki – Minden jog fenntartva</div>
   </footer>
